@@ -1,76 +1,159 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaSearch, FaTimes, FaBars } from 'react-icons/fa';
-import SearchBar from './SearchBar';
-import '../assets/styles/components/Navbar.css';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {
+  HiOutlineHome,
+  HiOutlineUsers,
+  HiOutlinePhotograph,
+  HiOutlineShoppingBag,
+  HiOutlineShoppingCart,
+  HiOutlineMail,
+  HiOutlineSearch,
+  HiOutlineX,
+  HiOutlineMenu
+} from 'react-icons/hi';
+import { useSearch } from './SearchContext';
+import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const { 
+    searchQuery, 
+    setSearchQuery, 
+    searchSuggestions, 
+    showSuggestions, 
+    setShowSuggestions,
+    updateSuggestions
+  } = useSearch();
   const location = useLocation();
+  const navigate = useNavigate();
+  const searchRef = useRef(null);
 
+  // Close suggestions when clicking outside
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowSuggestions(false);
       }
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const toggleSearch = () => {
     setSearchOpen(!searchOpen);
-    if (isOpen) setIsOpen(false);
+    if (!searchOpen) {
+      setSearchQuery('');
+      setShowSuggestions(false);
+    }
   };
 
-  const closeAll = () => {
-    setIsOpen(false);
-    setSearchOpen(false);
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    updateSuggestions(value);
+    setShowSuggestions(!!value);
   };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      if (searchSuggestions.length > 0) {
+        navigate('/search-results');
+      }
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSuggestionClick = (path) => {
+    navigate(path);
+    setSearchOpen(false);
+    setSearchQuery('');
+    setShowSuggestions(false);
+  };
+
+  const navLinks = [
+    { path: '/', name: 'Home', icon: <HiOutlineHome /> },
+    { path: '/about', name: 'About', icon: <HiOutlineUsers /> },
+    { path: '/Shop', name: 'Shop', icon: <HiOutlineShoppingCart /> },
+    { path: '/Gallery', name: 'Gallery', icon: <HiOutlinePhotograph /> },
+    { path: '/Culturez', name: 'Culturez®', icon: <HiOutlineShoppingBag /> },
+    { path: '/contact', name: 'Contact', icon: <HiOutlineMail /> },
+  ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container">
-        <Link to="/" className="logo" onClick={closeAll}>
-          Dream<span>Big</span>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-culturez-logo">
+          <span>CULTUREZ</span>
         </Link>
 
-        <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={closeAll}>
-            <FaHome className="nav-icon" /> Home
-          </Link>
-          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={closeAll}>
-            About
-          </Link>
-          <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`} onClick={closeAll}>
-            Services
-          </Link>
-          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={closeAll}>
-            Contact
-          </Link>
+        <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`navbar-link ${location.pathname === link.path ? 'active' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              <span className="navbar-icon">{link.icon}</span>
+              <span className="navbar-text">{link.name}</span>
+              <span className="navbar-underline"></span>
+            </Link>
+          ))}
         </div>
 
-        <div className="nav-actions">
-          <button className="search-toggle" onClick={toggleSearch}>
-            {searchOpen ? <FaTimes /> : <FaSearch />}
-          </button>
-          <button className="menu-toggle" onClick={toggleMenu}>
-            {isOpen ? <FaTimes /> : <FaBars />}
+        <div className="navbar-search-container" ref={searchRef}>
+          {searchOpen && (
+            <form onSubmit={handleSearchSubmit} className="navbar-search-form">
+              <div className="search-input-wrapper">
+                <input
+                  type="text"
+                  placeholder="Search products"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="navbar-search-input"
+                  autoFocus
+                />
+                {showSuggestions && (
+                  <div className="search-suggestions">
+                    {searchSuggestions.length > 0 ? (
+                      searchSuggestions.map((item) => (
+                        <div 
+                          key={`${item.type}-${item.id}`}
+                          className="suggestion-item"
+                          onClick={() => handleSuggestionClick(item.path)}
+                        >
+                          <span className="suggestion-category">{item.category}</span>
+                          <span className="suggestion-title">{item.title}</span>
+                          {item.price && (
+                            <span className="suggestion-price">${item.price.toFixed(2)}</span>
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      <div className="suggestion-item no-results">
+                        No results found for "{searchQuery}"
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+              <button type="submit" className="navbar-search-submit">
+                <HiOutlineSearch />
+              </button>
+            </form>
+          )}
+          <button onClick={toggleSearch} className="navbar-search-toggle">
+            {searchOpen ? <HiOutlineX /> : <HiOutlineSearch />}
           </button>
         </div>
 
-        <div className={`search-container ${searchOpen ? 'open' : ''}`}>
-          <SearchBar closeSearch={closeAll} />
-        </div>
+        <button onClick={toggleMenu} className="navbar-toggle">
+          {isOpen ? <HiOutlineX /> : <HiOutlineMenu />}
+        </button>
       </div>
     </nav>
   );
