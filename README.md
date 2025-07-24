@@ -1,4 +1,4 @@
-# CULTUREZ FASHION STORE
+# DreamBIG Marketing 
 
 ![Culturez Background](./public/images/culturez-bg.PNG)
 
