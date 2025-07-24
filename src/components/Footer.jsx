@@ -1,108 +1,115 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import '../assets/styles/components/Footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// Solid icons (for general UI elements)
+import { 
+  faMusic,
+  faShieldAlt,
+  faFileAlt
+} from '@fortawesome/free-solid-svg-icons';
+
+// Brand icons (for social media & platforms)
+import { 
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+  faSpotify,
+  faApple
+} from '@fortawesome/free-brands-svg-icons';
+
+// Heroicons (for navigation links)
+import {
+  HiOutlineHome,
+  HiOutlineUsers,
+  HiOutlineMail,
+  HiOutlineShoppingBag,
+  HiOutlinePhotograph,
+  HiOutlineShoppingCart,
+  HiOutlineNewspaper,
+  HiOutlineShieldCheck,
+  HiOutlineDocumentText
+} from 'react-icons/hi';
+
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-grid">
-          <div className="footer-col">
-            <h3 className="footer-title">Dream Big Marketing</h3>
-            <p className="footer-about">
-              We help businesses grow through innovative marketing strategies and data-driven solutions.
-            </p>
-            <div className="social-links">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebook />
+    <footer className="site-footer">
+      {/* CTA Section */}
+      <div className="footer-cta">
+        <h3>Ready to elevate your style?</h3>
+        <Link to="/contact" className="btn">Get In Touch</Link>
+      </div>
+
+      {/* Wave Section */}
+      <div className="footer-wave"></div>
+      
+      {/* Main Footer Content */}
+      <div className="footer-container">
+        {/* About Column */}
+        <div className="footer-section brand-section">
+          <div className="footer-logo">
+            <FontAwesomeIcon icon={faMusic} className="logo-icon" />
+            <h3>Culturez®</h3>
+          </div>
+          <p className="brand-tagline">
+            A premium fashion brand blending urban culture with contemporary style.
+            We create unique pieces that tell your story.
+          </p>
+          
+          <div className="social-media">
+            <h4>Connect With Us</h4>
+            <div className="social-icons">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <FontAwesomeIcon icon={faFacebook} className="social-icon" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <FontAwesomeIcon icon={faTwitter} className="social-icon" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin />
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <FontAwesomeIcon icon={faInstagram} className="social-icon" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram />
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <FontAwesomeIcon icon={faYoutube} className="social-icon" />
               </a>
             </div>
           </div>
-
-          <div className="footer-col">
-            <h3 className="footer-title">Quick Links</h3>
-            <ul className="footer-links">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About Us</Link>
-              </li>
-              <li>
-                <Link to="/services">Services</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-              <li>
-                <Link to="/privacy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/terms">Terms of Service</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h3 className="footer-title">Services</h3>
-            <ul className="footer-links">
-              <li>
-                <Link to="/services/service1">Digital Marketing</Link>
-              </li>
-              <li>
-                <Link to="/services/service2">SEO Optimization</Link>
-              </li>
-              <li>
-                <Link to="/services/service3">Social Media Management</Link>
-              </li>
-              <li>
-                <Link to="/services/service4">Content Marketing</Link>
-              </li>
-              <li>
-                <Link to="/services/service5">Brand Strategy</Link>
-              </li>
-              <li>
-                <Link to="/services/service6">Market Research</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h3 className="footer-title">Contact Info</h3>
-            <ul className="footer-contact">
-              <li>
-                <FaMapMarkerAlt />
-                <span>123 Marketing St, Business District, City, Country</span>
-              </li>
-              <li>
-                <FaPhone />
-                <span>+1 (555) 123-4567</span>
-              </li>
-              <li>
-                <FaEnvelope />
-                <span>info@dreambigmarketing.com</span>
-              </li>
-              <li>
-                <FaClock />
-                <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
-              </li>
-            </ul>
-          </div>
         </div>
-
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Dream Big Marketing Consultancy. All Rights Reserved.</p>
+        
+        {/* Quick Links Column */}
+        <div className="footer-section">
+          <h3 className="footer-section-title">Quick Links</h3>
+          <ul className="footer-links">
+            <li><Link to="/"><HiOutlineHome className="link-icon" /> Home</Link></li>
+            <li><Link to="/about"><HiOutlineUsers className="link-icon" /> About Us</Link></li>
+            <li><Link to="/Shop"><HiOutlineShoppingCart className="link-icon" /> Shop</Link></li>
+            <li><Link to="/Gallery"><HiOutlinePhotograph className="link-icon" /> Gallery</Link></li>
+            <li><Link to="/Culturez"><HiOutlineShoppingBag className="link-icon" /> Culturez®</Link></li>
+            <li><Link to="/contact"><HiOutlineMail className="link-icon" /> Contact</Link></li>
+            <li><Link to="/Blog"><HiOutlineNewspaper className="link-icon" /> Blog</Link></li>
+          </ul>
         </div>
+        
+        {/* Legal Column */}
+        <div className="footer-section">
+          <h3 className="footer-section-title">Legal</h3>
+          <ul className="footer-links">
+  <li><Link to="/privacy-policy"><HiOutlineShieldCheck className="link-icon" /> Privacy Policy</Link></li>
+  <li><Link to="/terms"><HiOutlineDocumentText className="link-icon" /> Terms of Service</Link></li>
+</ul>
+          
+          
+          
+        </div>
+      </div>
+      
+      {/* Copyright Section */}
+      <div className="footer-bottom">
+        <p className="copyright">
+          &copy; {new Date().getFullYear()} Culturez® by Smith. All rights reserved.
+        </p>
+        <p className="copyright">Designed by - LRBA</p>
       </div>
     </footer>
   );

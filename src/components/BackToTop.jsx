@@ -1,22 +1,13 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
-import '../assets/styles/components/BackToTop.css';
+import './BackToTop.css';
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
+  const toggleVisibility = () => {
+    setIsVisible(window.pageYOffset > 300);
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -25,10 +16,14 @@ const BackToTop = () => {
     });
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
   return (
     <div className={`back-to-top ${isVisible ? 'visible' : ''}`} onClick={scrollToTop}>
       <FaArrowUp />
-      <span className="tooltip">Back to Top</span>
     </div>
   );
 };
