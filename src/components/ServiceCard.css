@@ -1,0 +1,121 @@
+.service-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: var(--transition-medium);
+  overflow: hidden;
+  position: relative;
+  z-index: var(--z-index-normal);
+}
+
+.service-card.expanded {
+  grid-column: span 2;
+}
+
+.service-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  height: 100%;
+  text-align: center;
+}
+
+.service-card-icon-container {
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-card-title {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.service-card-expanded-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.service-card-expanded-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.service-card-expanded-title {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.service-card-image-container {
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+}
+
+.service-card-image {
+  width: 70%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-card-image:hover {
+  transform: scale(1.02) rotate(5deg);
+}
+
+.service-card-details {
+  padding-left: var(--spacing-md);
+  margin: 0;
+  align-items: center;
+}
+
+.service-card-details li {
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-secondary);
+  color: var(--primary-color);
+}
+
+.service-card-cta {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition-fast);
+  margin-top: auto;
+}
+
+.service-card-cta:hover {
+  background-color: transparent;
+  transform: translateY(-2px);
+  border: 2px solid var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .service-card.expanded {
+    grid-column: span 1;
+  }
+}

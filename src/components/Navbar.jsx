@@ -4,13 +4,13 @@ import {
   HiOutlineHome,
   HiOutlineUsers,
   HiOutlinePhotograph,
-  HiOutlineShoppingBag,
   HiOutlineShoppingCart,
   HiOutlineMail,
   HiOutlineSearch,
   HiOutlineX,
   HiOutlineMenu
 } from 'react-icons/hi';
+import { HiOutlineCog6Tooth } from 'react-icons/hi2';
 import { useSearch } from './SearchContext';
 import './Navbar.css';
 
@@ -77,9 +77,9 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', name: 'Home', icon: <HiOutlineHome /> },
     { path: '/about', name: 'About', icon: <HiOutlineUsers /> },
+    { path: '/Services', name: 'Services', icon: <HiOutlineCog6Tooth /> },
     { path: '/Shop', name: 'Shop', icon: <HiOutlineShoppingCart /> },
     { path: '/Gallery', name: 'Gallery', icon: <HiOutlinePhotograph /> },
-    { path: '/Culturez', name: 'Culturez®', icon: <HiOutlineShoppingBag /> },
     { path: '/contact', name: 'Contact', icon: <HiOutlineMail /> },
   ];
 
@@ -87,7 +87,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-culturez-logo">
-          <span>CULTUREZ</span>
+          <span>DREAM BIG</span>
         </Link>
 
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>

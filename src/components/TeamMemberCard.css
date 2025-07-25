@@ -34,18 +34,18 @@
 .about-team-member-card.about-ceo {
   min-width: 350px;
   max-width: 500px;
-  background: rgba(0, 179, 75, 0.215);
+  background: rgba(117, 180, 252, 0.244);
   border: 2px solid var(--secondary-color);
 }
 
 .about-team-member-card.about-ceo:hover {
-  background: rgba(0, 34, 12, 0.352);
+  background: transparent;
 }
 
 .about-team-member-card.about-ceo.about-expanded {
   min-width: 500px;
   max-width: 600px;
-  background: rgba(0, 43, 19, 0.457);
+  background: rgba(134, 207, 255, 0.176);
 }
 
 .about-team-member-image-container {
