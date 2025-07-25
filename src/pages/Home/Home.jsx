@@ -248,7 +248,7 @@ const Home = () => {
           }}
         >
           <div className="home-pivot-reflection"></div>
-          <img src="/images/culturez/logo.png" alt="Culturez" />
+          <img src="/images/services/logo.png" alt="Culturez" />
         </motion.div>
       </section>
 

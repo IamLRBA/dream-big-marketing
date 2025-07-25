@@ -23,14 +23,13 @@ import {
   HiOutlineHome,
   HiOutlineUsers,
   HiOutlineMail,
-  HiOutlineShoppingBag,
   HiOutlinePhotograph,
   HiOutlineShoppingCart,
   HiOutlineNewspaper,
   HiOutlineShieldCheck,
   HiOutlineDocumentText
 } from 'react-icons/hi';
-
+import { HiOutlineCog6Tooth } from 'react-icons/hi2';
 import './Footer.css';
 
 const Footer = () => {
@@ -38,8 +37,8 @@ const Footer = () => {
     <footer className="site-footer">
       {/* CTA Section */}
       <div className="footer-cta">
-        <h3>Ready to elevate your style?</h3>
-        <Link to="/contact" className="btn">Get In Touch</Link>
+        <h3>Ready to grow your business?</h3>
+        <Link to="/contact" className="btn">Get A Free Consultation</Link>
       </div>
 
       {/* Wave Section */}
@@ -51,11 +50,12 @@ const Footer = () => {
         <div className="footer-section brand-section">
           <div className="footer-logo">
             <FontAwesomeIcon icon={faMusic} className="logo-icon" />
-            <h3>Culturez®</h3>
+            <h3>Dream Big Marketing®</h3>
           </div>
           <p className="brand-tagline">
-            A premium fashion brand blending urban culture with contemporary style.
-            We create unique pieces that tell your story.
+            We help businesses unlock their full potential through powerful, 
+            results-driven marketing strategies that combine local insights 
+            with modern marketing expertise.
           </p>
           
           <div className="social-media">
@@ -83,9 +83,9 @@ const Footer = () => {
           <ul className="footer-links">
             <li><Link to="/"><HiOutlineHome className="link-icon" /> Home</Link></li>
             <li><Link to="/about"><HiOutlineUsers className="link-icon" /> About Us</Link></li>
+            <li><Link to="/Services"><HiOutlineCog6Tooth className="link-icon" /> Services</Link></li>
             <li><Link to="/Shop"><HiOutlineShoppingCart className="link-icon" /> Shop</Link></li>
             <li><Link to="/Gallery"><HiOutlinePhotograph className="link-icon" /> Gallery</Link></li>
-            <li><Link to="/Culturez"><HiOutlineShoppingBag className="link-icon" /> Culturez®</Link></li>
             <li><Link to="/contact"><HiOutlineMail className="link-icon" /> Contact</Link></li>
             <li><Link to="/Blog"><HiOutlineNewspaper className="link-icon" /> Blog</Link></li>
           </ul>
@@ -107,7 +107,7 @@ const Footer = () => {
       {/* Copyright Section */}
       <div className="footer-bottom">
         <p className="copyright">
-          &copy; {new Date().getFullYear()} Culturez® by Smith. All rights reserved.
+          &copy; {new Date().getFullYear()} Dream Big Marketing Consultancy. All rights reserved.
         </p>
         <p className="copyright">Designed by - LRBA</p>
       </div>

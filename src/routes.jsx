@@ -5,7 +5,7 @@ import About from './pages/About/About';
 import Shop from './pages/Shop/Shop';
 import Gallery from './pages/Gallery/Gallery';
 import Contact from './pages/Contact/Contact';
-import Culturez from './pages/Culturez/Culturez';
+import Services from './pages/Services/Services';
 import Blog from './pages/Blog/Blog';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import Terms from './pages/Terms/Terms';
@@ -20,7 +20,7 @@ const AppRoutes = () => {
       <Route path="/blog" element={<Blog />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />
-      <Route path="/Culturez" element={<Culturez />} />
+      <Route path="/Services" element={<Services />} />
       
       {/* Products Routes */}
       <Route path="/shop" element={<Shop />} />
