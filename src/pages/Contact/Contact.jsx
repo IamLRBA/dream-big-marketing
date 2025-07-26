@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
-import { FaWhatsapp, FaFacebook, FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa';
-import { ImSpinner8 } from 'react-icons/im';
-import { IoCheckmarkDone } from 'react-icons/io5';
-import { MdErrorOutline } from 'react-icons/md';
+import { 
+  HiOutlineMapPin, 
+  HiOutlinePhone,
+  HiOutlineBriefcase,
+  HiOutlineClock,
+  HiOutlineLockClosed,
+  HiArrowPath,
+  HiCheckCircle,
+  HiExclamationCircle
+} from 'react-icons/hi2';
+import { HiOutlineMail } from 'react-icons/hi';
 import { RiCustomerService2Fill } from 'react-icons/ri';
+import { FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import './Contact.css';
@@ -14,6 +21,7 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
+    service: '',
     subject: '',
     message: '',
     contactMethod: 'email'
@@ -31,7 +39,7 @@ const Contact = () => {
   // Create floating bubbles
   useEffect(() => {
     const newBubbles = [];
-    const icons = ['FaPhone', 'FaEnvelope', 'FaWhatsapp', 'FaMapMarkerAlt'];
+    const icons = ['HiOutlinePhone', 'HiOutlineMail', 'HiOutlineMapPin'];
     
     for (let i = 0; i < 15; i++) {
       newBubbles.push({
@@ -68,9 +76,9 @@ const Contact = () => {
     setError(null);
 
     if (formData.contactMethod === 'whatsapp') {
-      const phoneNumber = '256760316738';
+      const phoneNumber = '255657125229';
       const message = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
+        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
       );
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
       setIsSuccess(true);
@@ -92,6 +100,7 @@ const Contact = () => {
         name: '',
         email: '',
         phone: '',
+        service: '',
         subject: '',
         message: '',
         contactMethod: 'email'
@@ -105,6 +114,39 @@ const Contact = () => {
     .finally(() => {
       setIsLoading(false);
     });
+  };
+
+  // Service options
+  const serviceOptions = [
+    "Strategic Marketing & Brand Development",
+    "Digital Marketing & Online Campaigns",
+    "Content Creation & Creative Design",
+    "Corporate Communications & PR",
+    "Marketing for Startups & SMEs",
+    "Market Research & Consumer Insights",
+    "Training & Capacity Building"
+  ];
+
+  // Social media platforms with image paths
+  const socialMedia = [
+    { name: 'TikTok', icon: '/images/social/tiktok.png', url: 'https://www.tiktok.com/@dbigmkwww.tiktok.com/@dbigmkt' },
+    { name: 'Instagram', icon: '/images/social/instagram.png', url: 'https://www.instagram.com/dbigmkt/' },
+    { name: 'Facebook', icon: '/images/social/facebook.png', url: 'https://www.facebook.com/share/1WWcyXB7qR/' },
+    { name: 'LinkedIn', icon: '/images/social/linkedin.png', url: 'https://www.linkedin.com/in/dream-big-marketing-consultancy-a70b15374' },
+    { name: 'YouTube', icon: '/images/social/youtube.png', url: 'https://www.youtube.com/@DbigMkt' },
+    { name: 'X', icon: '/images/social/x.png', url: 'https://x.com/dbigmkt' },
+    { name: 'Email', icon: '/images/social/email.png', url: 'mailto:dbigmkt@gmail.com' },
+    { name: 'WhatsApp', icon: '/images/social/whatsapp.png', url: 'https://wa.me/255657125229' }
+  ];
+
+  const handleSocialClick = (e, url) => {
+    e.preventDefault();
+    // Popping effect animation
+    e.currentTarget.classList.add('contact-social-pop');
+    setTimeout(() => {
+      window.open(url, '_blank');
+      e.currentTarget.classList.remove('contact-social-pop');
+    }, 300);
   };
 
   return (
@@ -141,10 +183,9 @@ const Contact = () => {
               ease: 'linear'
             }}
           >
-            {bubble.icon === 'FaPhone' && <FaPhone />}
-            {bubble.icon === 'FaEnvelope' && <FaEnvelope />}
-            {bubble.icon === 'FaWhatsapp' && <FaWhatsapp />}
-            {bubble.icon === 'FaMapMarkerAlt' && <FaMapMarkerAlt />}
+            {bubble.icon === 'HiOutlinePhone' && <HiOutlinePhone />}
+            {bubble.icon === 'HiOutlineMail' && <HiOutlineMail />}
+            {bubble.icon === 'HiOutlineMapPin' && <HiOutlineMapPin />}
           </motion.div>
         ))}
       </div>
@@ -158,7 +199,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="contact-hero-content"
           >
-            <h1 className="contact-hero-title">Contact Us</h1>
+            <h1 className="contact-hero-title">Contact DreamBIG</h1>
             <p className="contact-hero-subtitle">We're here to help and answer any questions you might have.</p>
             <div className="contact-scrolling-text">
               <motion.div
@@ -178,13 +219,13 @@ const Contact = () => {
           <div className="contact-status-content">
             {isSuccess ? (
               <>
-                <IoCheckmarkDone className="contact-status-icon" />
+                <HiCheckCircle className="contact-status-icon" />
                 <h3>Message Sent Successfully!</h3>
                 <p>We'll get back to you soon. Thank you for reaching out.</p>
               </>
             ) : (
               <>
-                <MdErrorOutline className="contact-status-icon" />
+                <HiExclamationCircle className="contact-status-icon" />
                 <h3>Message Failed to Send</h3>
                 <p>{error}</p>
                 <button 
@@ -194,7 +235,7 @@ const Contact = () => {
                     setFormData(prev => ({ ...prev, contactMethod: 'whatsapp' }));
                   }}
                 >
-                  <FaWhatsapp /> Try WhatsApp Instead
+                  Try WhatsApp Instead
                 </button>
               </>
             )}
@@ -212,7 +253,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="contact-info-wrapper"
           >
-            <h2 className="contact-section-title">Our Contact Information</h2>
+            <h2 className="contact-section-title">Our Contact Info</h2>
             <p className="contact-section-subtitle">Reach out through any of these channels for quick response</p>
             
             <div className="contact-info-grid">
@@ -223,12 +264,12 @@ const Contact = () => {
                 onClick={() => toggleCardColor('location')}
               >
                 <div className={`contact-info-icon contact-${cardColors.location}-icon`}>
-                  <FaMapMarkerAlt />
+                  <HiOutlineMapPin />
                 </div>
                 <h3>Location</h3>
-                <p>75a Better View Rd, Kampala, Uganda</p>
+                <p>Magomeni Mapipa, Dar es Salaam, Tanzania</p>
                 <a 
-                  href="https://maps.google.com/?q=75a+Better+View+Rd,+Kampala,+Uganda" 
+                  href="https://www.google.com/maps/place/6%C2%B048'22.2%22S+39%C2%B015'43.8%22E/@-6.8056325,39.2611998,291m/data=!3m1!1e3!4m4!3m3!8m2!3d-6.8061768!4d39.2621723?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={`contact-map-link contact-${cardColors.location}-link`}
@@ -244,12 +285,13 @@ const Contact = () => {
                 onClick={() => toggleCardColor('phone')}
               >
                 <div className={`contact-info-icon contact-${cardColors.phone}-icon`}>
-                  <FaPhone />
+                  <HiOutlinePhone />
                 </div>
-                <h3>Phone</h3>
-                <p>+256 776 521 400</p>
+                <h3>Phones</h3>
+                <p>+255 745 600 270</p>
+                <p>+255 620 144 900</p>
                 <a 
-                  href="tel:+256760316738" 
+                  href="tel:+255745600270" 
                   className={`contact-call-link contact-${cardColors.phone}-link`}
                 >
                   Call Now
@@ -263,12 +305,12 @@ const Contact = () => {
                 onClick={() => toggleCardColor('email')}
               >
                 <div className={`contact-info-icon contact-${cardColors.email}-icon`}>
-                  <FaEnvelope />
+                  <HiOutlineMail />
                 </div>
                 <h3>Email</h3>
-                <p>culturezbysmith.com</p>
+                <p>dbigmkt@gmail.com</p>
                 <a 
-                  href="mailto:info@culturez.com" 
+                  href="mailto:dbigmkt@gmail.com" 
                   className={`contact-email-link contact-${cardColors.email}-link`}
                 >
                   Send Email
@@ -281,7 +323,7 @@ const Contact = () => {
                 transition={{ duration: 0.3 }}
               >
                 <a 
-                  href="https://wa.me/256760316738" 
+                  href="https://wa.me/255657125229" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="contact-whatsapp-link"
@@ -290,7 +332,7 @@ const Contact = () => {
                     <FaWhatsapp />
                   </div>
                   <h3>WhatsApp</h3>
-                  <p>+256 776 521 400</p>
+                  <p>+255 657 125229</p>
                   <span className="contact-whatsapp-cta">Message Us</span>
                 </a>
               </motion.div>
@@ -313,80 +355,33 @@ const Contact = () => {
             <p className="contact-section-subtitle">Follow us on social media for updates and more</p>
             
             <div className="contact-social-grid">
-              <motion.a 
-                href="https://www.instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-social-card"
-                whileHover={{ y: -5, scale: 1.05 }}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <FaInstagram className="contact-social-icon" />
-                <span>Instagram</span>
-              </motion.a>
-              
-              <motion.a 
-                href="https://www.facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-social-card"
-                whileHover={{ y: -5, scale: 1.05 }}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <FaFacebook className="contact-social-icon" />
-                <span>Facebook</span>
-              </motion.a>
-              
-              <motion.a 
-                href="https://www.twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-social-card"
-                whileHover={{ y: -5, scale: 1.05 }}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <FaTwitter className="contact-social-icon" />
-                <span>Twitter</span>
-              </motion.a>
-              
-              <motion.a 
-                href="https://www.tiktok.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-social-card"
-                whileHover={{ y: -5, scale: 1.05 }}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <FaTiktok className="contact-social-icon" />
-                <span>TikTok</span>
-              </motion.a>
-              
-              <motion.a 
-                href="https://wa.me/256760316738" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-social-card"
-                whileHover={{ y: -5, scale: 1.05 }}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                <FaWhatsapp className="contact-social-icon" />
-                <span>WhatsApp</span>
-              </motion.a>
+              {socialMedia.map((platform, index) => (
+                <motion.a 
+                  key={platform.name}
+                  href={platform.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="contact-social-card"
+                  whileHover={{ y: -10, scale: 1.1 }}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 300
+                  }}
+                  onClick={(e) => handleSocialClick(e, platform.url)}
+                >
+                  <img 
+                    src={platform.icon} 
+                    alt={platform.name} 
+                    className="contact-social-image"
+                  />
+                  <span>{platform.name}</span>
+                </motion.a>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -405,14 +400,14 @@ const Contact = () => {
             <h2 className="contact-section-title">Our Location</h2>
             <p className="contact-section-subtitle">Find us easily with this interactive map</p>
             <div className="contact-map-container">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7526223157565!2d32.4896411!3d0.2773552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbdb4eddd7a25%3A0x585236c6d89ce5f0!2s75a%20Better%20View%20Rd%2C%20Kampala!5e0!3m2!1sen!2sug!4v1625068800000!5m2!1sen!2sug" 
-                width="100%" 
-                height="450" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198.19220582310863!2d39.2611998!3d-6.8056325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c2b7dbe7fbf%3A0x1f4d61e73c7b6a18!2s6%C2%B048'22.2%22S%2039%C2%B015'43.8%22E!5e1!3m2!1sen!2sug!4v1721993456000!5m2!1sen!2sug"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen=""
                 loading="lazy"
-                title="Cluturez Location"
+                title="DreamBIG Marketing Consultancy Location"
               ></iframe>
             </div>
           </motion.div>
@@ -440,7 +435,7 @@ const Contact = () => {
             </div>
             
             <form onSubmit={handleSubmit} className="contact-form">
-              <h2 className="contact-section-title">Send Us a Message</h2>
+              <h2 className="contact-section-title">Book a Service</h2>
               <p className="contact-form-subtitle">Fill out the form below and select your preferred contact method</p>
               
               <div className="contact-form-group">
@@ -474,6 +469,22 @@ const Contact = () => {
                   onChange={handleChange}
                   required={formData.contactMethod === 'whatsapp' || formData.contactMethod === 'text'}
                 />
+              </div>
+              
+              {/* Service Selection Field */}
+              <div className="contact-form-group">
+                <select 
+                  name="service" 
+                  value={formData.service}
+                  onChange={handleChange}
+                  required
+                  className="contact-service-select"
+                >
+                  <option value="" disabled>Select a Service</option>
+                  {serviceOptions.map((service, index) => (
+                    <option key={index} value={service}>{service}</option>
+                  ))}
+                </select>
               </div>
               
               <div className="contact-form-group">
@@ -543,17 +554,13 @@ const Contact = () => {
               >
                 {isLoading ? (
                   <>
-                    <ImSpinner8 className="contact-spinner" /> 
+                    <HiArrowPath className="contact-spinner" /> 
                     {formData.contactMethod === 'whatsapp' ? 'Opening WhatsApp...' : 'Sending Message...'}
                   </>
                 ) : (
                   <>
                     {formData.contactMethod === 'email' && 'Send Email'}
-                    {formData.contactMethod === 'whatsapp' && (
-                      <>
-                        <FaWhatsapp /> Send via WhatsApp
-                      </>
-                    )}
+                    {formData.contactMethod === 'whatsapp' && 'Send via WhatsApp'}
                     {formData.contactMethod === 'text' && 'Send Text Message'}
                   </>
                 )}
@@ -576,14 +583,17 @@ const Contact = () => {
             <h2 className="contact-section-title">Business Hours</h2>
             <div className="contact-hours-grid">
               <div className="contact-day">
+                <HiOutlineBriefcase className="contact-day-icon" />
                 <span>Monday - Friday</span>
-                <span>9:00 AM - 6:00 PM</span>
+                <span>8:00 AM - 5:00 PM</span>
               </div>
               <div className="contact-day">
+                <HiOutlineClock className="contact-day-icon" />
                 <span>Saturday</span>
                 <span>10:00 AM - 4:00 PM</span>
               </div>
               <div className="contact-day">
+                <HiOutlineLockClosed className="contact-day-icon" />
                 <span>Sunday</span>
                 <span>Closed</span>
               </div>

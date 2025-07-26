@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { 
   HiOutlineUserCircle as HiCrown,  
-  HiOutlineScissors,
+  HiOutlineCalculator,
   HiOutlineChartBar,               
-  HiOutlineShoppingBag,
+  HiOutlineGlobeAlt,
   HiOutlineUsers,                  
   HiOutlineLightBulb,
   HiOutlineShieldCheck,
@@ -55,11 +55,11 @@ const About = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'SMITH',
+      name: 'Swaleh Kellah Liban',
       role: 'Founder & CEO',
       icon: <HiCrown />,  
       image: '/images/team/ceo.jpg',
-      extendedBio: 'With a background in fashion design and business strategy, our CEO has guided Culturez® from a small boutique to a respected name in the industry. His passion for urban culture and innovative approach to contemporary style has been instrumental in our success.',
+      extendedBio: 'With his visionary mindset and hands-on expertise in brand strategy and business development, our CEO leads DreamBig Marketing Consultancy with passion and purpose. He drives innovation, nurtures client relationships, and inspires the team to deliver bold, results-driven marketing solutions that make an impact.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -69,11 +69,11 @@ const About = () => {
     },
     {
       id: 2,
-      name: 'DEIVY',
-      role: 'Head of Design',
-      icon: <HiOutlineScissors />,
-      image: '/images/team/member2.jpg',
-      extendedBio: 'With a decade of experience in fashion design, our Head of Design has an uncanny ability to spot emerging trends. He works closely with the team to refine collections and develop unique style identities.',
+      name: 'Shamsa Ally Liban (CPA-T)',
+      role: 'Head of Accounts',
+      icon: <HiOutlineCalculator />,
+      image: '/images/team/shamsa.jpg',
+      extendedBio: 'With years of  experience in financial leadership in the marketing industry, our Head of Accounts brings strategic insight and precision to every project. She ensures budgets are aligned with client goals, oversees financial planning, and collaborates closely with departments to drive sustainable growth and accountability.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -83,11 +83,11 @@ const About = () => {
     },
     {
       id: 3,
-      name: 'Team Member 2',
+      name: 'Mohammed Amiry Charity',
       role: 'Marketing Director',
       icon: <HiOutlineChartBar />,  
-      image: '/images/team/member1.jpg',
-      extendedBio: 'Our Marketing Director combines data-driven strategies with creative storytelling to build compelling narratives around our brand. With expertise in digital marketing, they ensure our collections reach fashion-forward audiences effectively.',
+      image: '/images/team/Mohammed.jpg',
+      extendedBio: 'With a sharp eye for market trends and over a decade of campaign experience, our Marketing Director crafts compelling strategies that connect brands with their audiences. She leads the creative and digital teams to deliver innovative, data-driven marketing that drives engagement and elevates brand presence.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -97,11 +97,11 @@ const About = () => {
     },
     {
       id: 4,
-      name: 'Team Member 3',
-      role: 'Retail Manager',
-      icon: <HiOutlineShoppingBag />,
-      image: '/images/team/member3.jpg',
-      extendedBio: 'With years of experience in high-end retail, our Retail Manager maintains our premium shopping experience. Their expertise in customer service is matched only by their deep knowledge of contemporary fashion.',
+      name: 'Nasra Harith Mohammed',
+      role: 'Digital Marketer',
+      icon: <HiOutlineGlobeAlt />,
+      image: '/images/team/Nasra.jpg',
+      extendedBio: 'Equipped with a flair for analytics and creativity, our Digital Marketer specializes in turning clicks into conversions. With 7+ years of experience across SEO, social media, and paid campaigns, he ensures our clients stay ahead in the digital space through targeted strategies and continuous optimization.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -111,11 +111,11 @@ const About = () => {
     },
     {
       id: 5,
-      name: 'Team Member 4',
-      role: 'Brand Relations',
-      icon: <HiOutlineUsers />,  
-      image: '/images/team/member4.jpg',
-      extendedBio: 'Our Brand Relations specialist fosters partnerships with influencers and collaborators. With a background in urban fashion culture, they build bridges between our brand and the community we serve.',
+      name: 'LRBA',
+      role: ' Head of Technology',
+      icon: <HiOutlineLightBulb />,  
+      image: '/images/team/LRBA.jpg',
+      extendedBio: 'With experience at the intersection of marketing and engineering, our Head of Technology turns ambitious ideas into scalable digital platforms. He leads the adoption of emerging tech—from AI‑driven analytics to cloud‑native infrastructure—ensuring every campaign is powered by speed, security, and seamless user experience.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -131,28 +131,28 @@ const About = () => {
       title: 'Integrity',
       icon: <HiOutlineShieldCheck />,
       summary: 'We conduct business with honesty and transparency.',
-      details: 'Every collection we create and every relationship we build is grounded in ethical practices. We believe that long-term success comes from doing what is right, not just what is profitable.'
+      details: 'Every campaign we craft and every client partnership we nurture is rooted in integrity. At DreamBig Marketing Consultancy, we believe lasting success comes from doing what’s right—not just what drives immediate results.'
     },
     {
       id: 2,
       title: 'Innovation',
       icon: <HiOutlineLightBulb />,
-      summary: 'We embrace creativity and forward-thinking design.',
-      details: 'In an ever-changing fashion landscape, we stay ahead by continuously exploring new ideas, materials, and silhouettes. We challenge our team to push boundaries and redefine urban style.'
+      summary: 'We embrace creativity and forward-thinking marketing.',
+      details: 'In an ever-evolving marketing landscape, we stay ahead by constantly exploring fresh ideas, emerging trends, and innovative strategies. We challenge our team to think boldly, push creative boundaries, and redefine what impactful marketing looks like.'
     },
     {
       id: 3,
       title: 'Excellence',
       icon: <HiOutlineStar />,
       summary: 'We strive for the highest quality in everything we do.',
-      details: 'From fabric selection to final stitching, we maintain rigorous standards. We invest in premium materials and craftsmanship to ensure our garments meet the highest benchmarks.'
+      details: 'From initial concept to final execution, we uphold the highest standards. We invest in top-tier tools, talent, and strategy to ensure every campaign delivers exceptional quality and measurable impact.'
     },
     {
       id: 4,
       title: 'Community',
       icon: <HiOutlineHeart />,
-      summary: 'We celebrate urban culture and its influence on fashion.',
-      details: 'Style thrives in community. We collaborate with local artists and cultural influencers to create collections that authentically represent the streets that inspire us.'
+      summary: 'We celebrate the power of culture and its influence on marketing.',
+      details: 'Marketing thrives in community. We collaborate with local creators, influencers, and changemakers to craft campaigns that authentically reflect the voices and values of the audiences we serve.'
     }
   ];
 
@@ -180,9 +180,9 @@ const About = () => {
         <div className="about-hero-content">
           <h1 className="about-hero-title">
             <span className="about-title-part">About</span>
-            <span className="about-title-part">Culturez®</span>
+            <span className="about-title-part">DreamBIG</span>
           </h1>
-          <p className="about-hero-subtitle">Where Urban Culture Meets Contemporary Style</p>
+          <p className="about-hero-subtitle">Where Bold Ideas Meet Impactful Marketing</p>
         </div>
       </section>
 
@@ -194,19 +194,20 @@ const About = () => {
           </h2>
           <div className="about-history-content">
             <div className="about-history-text about-slide-in-left">
-              <h3>The Beginning</h3>
-              <p>
-                Culturez® was founded in 2015 with a clear vision: to create a premium fashion brand that blends urban culture with contemporary style. What started as a small boutique has grown into a recognized name in fashion.
-              </p>
-              <h3>Our Mission</h3>
-              <p>
-                We believe in the power of fashion to express identity and culture. Our mission is to create high-quality garments that bridge streetwear sophistication with modern design, offering style that speaks to the urban connoisseur.
-              </p>
-              <h3>Culture First</h3>
-              <p>
-                Our philosophy reflects our core values. We put cultural authenticity first in everything we design, creating pieces that resonate with those who appreciate both urban roots and contemporary refinement.
-              </p>
-            </div>
+  <h3>The Beginning</h3>
+  <p>
+    DreamBIG Marketing Consultancy was founded in 2015 with a clear vision: to empower brands through bold, innovative marketing that blends creativity with strategy. What started as a small team has grown into a trusted partner for businesses aiming to make a lasting impact.
+  </p>
+  <h3>Our Mission</h3>
+  <p>
+    To empower businesses with innovative, data-driven marketing solutions that inspire growth, amplify brand presence, and connect meaningfully with their audiences. We strive to be the trusted partner for every ambitious brand ready to dream big and achieve bigger.
+  </p>
+  <h3>Our Vision</h3>
+  <p>
+    To become Africa’s leading creative marketing consultancy — known for bold ideas, impactful campaigns, and transforming businesses into powerful brands that thrive locally and compete globally.
+  </p>
+</div>
+
             <div className="about-history-image about-slide-in-right">
               <img src="/images/about-image1.jpg" alt="Culturez History" />
             </div>
@@ -221,23 +222,23 @@ const About = () => {
             <span>By The Numbers</span>
           </h2>
           <div className="about-stats-grid">
-            <div className="about-stat-card">
-              <CountUp end={7} duration={3} suffix="+" className="about-stat-number" />
-              <p className="about-stat-label">Collections Launched</p>
-            </div>
-            <div className="about-stat-card">
-              <CountUp end={20} duration={3} suffix="+" className="about-stat-number" />
-              <p className="about-stat-label">Celebrities Styles</p>
-            </div>
-            <div className="about-stat-card">
-              <CountUp end={100} duration={3} suffix="K+" className="about-stat-number" />
-              <p className="about-stat-label">Happy Customers</p>
-            </div>
-            <div className="about-stat-card">
-              <CountUp end={8} duration={3} suffix="+" className="about-stat-number" />
-              <p className="about-stat-label">Years in Fashion</p>
-            </div>
-          </div>
+  <div className="about-stat-card">
+    <CountUp end={20} duration={3} suffix="+" className="about-stat-number" />
+    <p className="about-stat-label">Campaigns Delivered</p>
+  </div>
+  <div className="about-stat-card">
+    <CountUp end={35} duration={3} suffix="+" className="about-stat-number" />
+    <p className="about-stat-label">Brands Partnered</p>
+  </div>
+  <div className="about-stat-card">
+    <CountUp end={50} duration={3} suffix="K+" className="about-stat-number" />
+    <p className="about-stat-label">Satisfied Clients</p>
+  </div>
+  <div className="about-stat-card">
+    <CountUp end={6} duration={3} suffix="+" className="about-stat-number" />
+    <p className="about-stat-label">Years in Marketing</p>
+  </div>
+</div>
         </div>
       </section>
 
