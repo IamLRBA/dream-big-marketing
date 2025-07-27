@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Shop from './pages/Shop/Shop';
+import Portfolio from './pages/Portfolio/Portfolio';
 import Gallery from './pages/Gallery/Gallery';
 import Contact from './pages/Contact/Contact';
 import Services from './pages/Services/Services';
@@ -22,8 +22,8 @@ const AppRoutes = () => {
       <Route path="/terms" element={<Terms />} />
       <Route path="/Services" element={<Services />} />
       
-      {/* Products Routes */}
-      <Route path="/shop" element={<Shop />} />
+      {/* Portfolio Routes */}
+      <Route path="/portfolio" element={<Portfolio />} />
       
       {/*   Gallery Routes */}
       <Route path="/gallery" element={<Gallery />} />
