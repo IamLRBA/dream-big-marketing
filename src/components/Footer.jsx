@@ -24,7 +24,7 @@ import {
   HiOutlineUsers,
   HiOutlineMail,
   HiOutlinePhotograph,
-  HiOutlineShoppingCart,
+  HiOutlineFolderOpen,
   HiOutlineNewspaper,
   HiOutlineShieldCheck,
   HiOutlineDocumentText
@@ -59,22 +59,22 @@ const Footer = () => {
           </p>
           
           <div className="social-media">
-            <h4>Connect With Us</h4>
-            <div className="social-icons">
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <FontAwesomeIcon icon={faFacebook} className="social-icon" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <FontAwesomeIcon icon={faTwitter} className="social-icon" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <FontAwesomeIcon icon={faInstagram} className="social-icon" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <FontAwesomeIcon icon={faYoutube} className="social-icon" />
-              </a>
-            </div>
-          </div>
+  <h4>Connect With Us</h4>
+  <div className="social-icons">
+    <a href="https://www.facebook.com/share/1WWcyXB7qR/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <FontAwesomeIcon icon={faFacebook} className="social-icon" />
+    </a>
+    <a href="https://x.com/dbigmkt" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+      <FontAwesomeIcon icon={faTwitter} className="social-icon" />
+    </a>
+    <a href="https://www.instagram.com/dbigmkt/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <FontAwesomeIcon icon={faInstagram} className="social-icon" />
+    </a>
+    <a href="https://www.youtube.com/@DbigMkt" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <FontAwesomeIcon icon={faYoutube} className="social-icon" />
+    </a>
+  </div>
+</div>
         </div>
         
         {/* Quick Links Column */}
@@ -84,7 +84,7 @@ const Footer = () => {
             <li><Link to="/"><HiOutlineHome className="link-icon" /> Home</Link></li>
             <li><Link to="/about"><HiOutlineUsers className="link-icon" /> About Us</Link></li>
             <li><Link to="/Services"><HiOutlineCog6Tooth className="link-icon" /> Services</Link></li>
-            <li><Link to="/Shop"><HiOutlineShoppingCart className="link-icon" /> Shop</Link></li>
+            <li><Link to="/Portfolio"><HiOutlineFolderOpen className="link-icon" /> Portfolio</Link></li>
             <li><Link to="/Gallery"><HiOutlinePhotograph className="link-icon" /> Gallery</Link></li>
             <li><Link to="/contact"><HiOutlineMail className="link-icon" /> Contact</Link></li>
             <li><Link to="/Blog"><HiOutlineNewspaper className="link-icon" /> Blog</Link></li>
