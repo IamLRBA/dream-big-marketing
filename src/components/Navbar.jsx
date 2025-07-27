@@ -4,7 +4,7 @@ import {
   HiOutlineHome,
   HiOutlineUsers,
   HiOutlinePhotograph,
-  HiOutlineShoppingCart,
+  HiOutlineFolderOpen,
   HiOutlineMail,
   HiOutlineSearch,
   HiOutlineX,
@@ -78,7 +78,7 @@ const Navbar = () => {
     { path: '/', name: 'Home', icon: <HiOutlineHome /> },
     { path: '/about', name: 'About', icon: <HiOutlineUsers /> },
     { path: '/Services', name: 'Services', icon: <HiOutlineCog6Tooth /> },
-    { path: '/Shop', name: 'Shop', icon: <HiOutlineShoppingCart /> },
+    { path: '/Portfolio', name: 'Portfolio', icon: <HiOutlineFolderOpen /> },
     { path: '/Gallery', name: 'Gallery', icon: <HiOutlinePhotograph /> },
     { path: '/contact', name: 'Contact', icon: <HiOutlineMail /> },
   ];
