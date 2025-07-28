@@ -343,7 +343,47 @@
   padding-bottom: var(--spacing-md);
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+
+  /* Optional: limit height or width if necessary */
+  max-width: 100%;
+  padding-inline: var(--spacing-md);
+
+  /* Scrollbar styling for modern look */
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) transparent;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-color-hover);
+  }
+
+  /* Snap children to scroll position */
+  > * {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* Optional: subtle hover effect for child elements */
+  > *:hover {
+    transform: scale(1.03);
+  }
 }
+
 
 /* Animations */
 @keyframes aboutTitleShine {
