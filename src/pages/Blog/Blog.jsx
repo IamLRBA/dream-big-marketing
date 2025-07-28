@@ -1,46 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
+import { 
+  HiOutlineCalendar, 
+  HiOutlineUser, 
+  HiOutlineArrowRight 
+} from 'react-icons/hi';
 import './Blog.css';
 
 const Blog = () => {
-  // Sample data - replace with your actual blog posts
   const blogPosts = [
     {
       id: 1,
-      title: 'New Collection Launch',
-      excerpt: 'We are excited to announce our newest fashion collection. Discover the latest urban contemporary styles from Culturez.',
-      date: '2023-06-15',
-      author: 'Admin',
+      title: 'Digital Marketing Trends 2025',
+      excerpt: 'Discover the key digital marketing trends that will shape 2025 and how businesses can leverage them for growth.',
+      date: '2025-06-15',
+      author: 'Marketing Team',
       image: '/images/blog/post1.jpg',
-      slug: 'new-collection'
+      slug: 'digital-marketing-trends'
     },
     {
       id: 2,
-      title: 'Upcoming Fashion Show',
-      excerpt: 'Culturez will be showcasing at the major fashion event this season. Get your tickets now!',
-      date: '2023-05-28',
-      author: 'Admin',
+      title: 'Brand Strategy Essentials',
+      excerpt: 'Learn the essential components of a successful brand strategy in today\'s competitive marketplace.',
+      date: '2025-05-28',
+      author: 'Strategy Team',
       image: '/images/blog/post2.jpg',
-      slug: 'fashion-show'
+      slug: 'brand-strategy'
     },
     {
       id: 3,
-      title: 'Sustainable Fashion Initiative',
-      excerpt: 'Culturez has launched a new sustainability program with eco-friendly materials and ethical production methods.',
-      date: '2023-05-10',
-      author: 'Sustainability Team',
+      title: 'Social Media Engagement Tactics',
+      excerpt: 'Proven tactics to boost engagement and build community on social media platforms.',
+      date: '2025-05-10',
+      author: 'Social Media Team',
       image: '/images/blog/post3.jpg',
-      slug: 'sustainability'
+      slug: 'social-media-tactics'
     },
     {
       id: 4,
-      title: 'Fashion Industry Insights',
-      excerpt: 'Join us for an exclusive panel discussion on the future of urban fashion, featuring industry leaders.',
-      date: '2023-04-22',
-      author: 'Events Team',
+      title: 'Measuring Marketing ROI',
+      excerpt: 'A comprehensive guide to accurately measure and improve your marketing return on investment.',
+      date: '2025-04-22',
+      author: 'Analytics Team',
       image: '/images/blog/post4.jpg',
-      slug: 'industry-insights'
+      slug: 'marketing-roi'
     }
   ];
 
@@ -48,9 +51,9 @@ const Blog = () => {
     <div className="blog-page">
       <section className="blog-section blog-list-section">
         <div className="blog-container">
-          <h2 className="blog-section-title">News & Blog</h2>
+          <h2 className="blog-section-title">Marketing Insights</h2>
           <p className="blog-section-subtitle">
-            Stay updated with the latest news, announcements, and insights from Culturez
+            Stay updated with the latest marketing strategies, industry news, and expert insights
           </p>
           
           <div className="blog-grid">
@@ -61,13 +64,13 @@ const Blog = () => {
                 </div>
                 <div className="blog-content">
                   <div className="blog-meta">
-                    <span><FaCalendarAlt /> {new Date(post.date).toLocaleDateString()}</span>
-                    <span><FaUser /> {post.author}</span>
+                    <span><HiOutlineCalendar className="blog-icon" /> {new Date(post.date).toLocaleDateString()}</span>
+                    <span><HiOutlineUser className="blog-icon" /> {post.author}</span>
                   </div>
                   <h3>{post.title}</h3>
                   <p>{post.excerpt}</p>
                   <Link to={`/blog/${post.slug}`} className="blog-read-more">
-                    Read More <FaArrowRight />
+                    Read More <HiOutlineArrowRight className="blog-arrow" />
                   </Link>
                 </div>
               </div>
