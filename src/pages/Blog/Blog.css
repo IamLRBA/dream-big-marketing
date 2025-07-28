@@ -13,8 +13,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/images/hero-bg28.jpg') center/cover no-repeat;
-  filter: blur(8px) brightness(1);
+  background: url('/images/bg-services15.jpg') center/cover no-repeat;
+  filter: blur(8px) brightness(2);
   z-index: -2;
   animation: backgroundPan 30s linear infinite;
 }
@@ -216,6 +216,21 @@
 
 .blog-read-more:hover::after {
   width: 100%;
+}
+
+.blog-icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.blog-arrow {
+  margin-left: 5px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.blog-read-more:hover .blog-arrow {
+  transform: translateX(3px);
 }
 
 @media (max-width: 768px) {

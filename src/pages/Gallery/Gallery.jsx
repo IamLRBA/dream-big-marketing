@@ -1,8 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  FaPlay, FaImages, FaVideo, FaTimes, FaExpand, FaCompress, 
-  FaVolumeUp, FaVolumeMute, FaPause, FaRedo
-} from 'react-icons/fa';
+  HiOutlinePlay, 
+  HiOutlinePhotograph, 
+  HiOutlineVideoCamera, 
+  HiOutlineX,
+  HiOutlineArrowsExpand,
+  HiOutlineVolumeUp,
+  HiOutlineVolumeOff,
+  HiOutlinePause,
+  HiOutlineRefresh
+} from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Gallery.css';
 
@@ -22,91 +29,90 @@ const Gallery = () => {
   const videoRef = useRef(null);
   const photoModalRef = useRef(null);
 
-  // Sample data with metadata
-const photos = [
-  { 
-    id: 1, 
-    src: '/images/studio/gallery1.jpg', 
-    alt: 'Celebrity Styling Session',
-    description: 'Our lead stylist working with a celebrity client on their red carpet look',
-    date: '2023-05-15',
-    equipment: 'Spring Collection, Custom Accessories'
-  },
-  { 
-    id: 2, 
-    src: '/images/studio/gallery2.jpg', 
-    alt: 'Fashion Editorial',
-    description: 'Behind-the-scenes of our latest editorial shoot featuring celebrity model',
-    date: '2023-05-20',
-    equipment: 'Premium Outerwear, Designer Collaborations'
-  },
-  { 
-    id: 3, 
-    src: '/images/studio/gallery3.jpg', 
-    alt: 'Runway Preparation',
-    description: 'Celebrity model getting final touches before hitting the runway',
-    date: '2023-06-02',
-    equipment: 'Signature Collection, Statement Pieces'
-  },
-  { 
-    id: 4, 
-    src: '/images/studio/gallery4.jpg', 
-    alt: 'Wardrobe Consultation',
-    description: 'Personal styling session with A-list celebrity client',
-    date: '2023-06-10',
-    equipment: 'Limited Edition Pieces, Custom Tailoring'
-  },
-  { 
-    id: 5, 
-    src: '/images/studio/gallery5.jpg', 
-    alt: 'Red Carpet Moment',
-    description: 'Celebrity wearing our custom-designed gown at major awards show',
-    date: '2023-06-15',
-    equipment: 'Haute Couture, Handcrafted Details'
-  },
-  { 
-    id: 6, 
-    src: '/images/studio/gallery6.jpg', 
-    alt: 'Press Event',
-    description: 'Celebrity ambassador at our flagship store opening',
-    date: '2023-06-20',
-    equipment: 'Seasonal Collection, Branded Merchandise'
-  }
-];
+  const photos = [
+    { 
+      id: 1, 
+      src: '/images/studio/gallery1.jpg', 
+      alt: 'Team Strategy Meeting',
+      description: 'Our marketing team brainstorming innovative strategies for client campaigns',
+      date: '2023-05-15',
+      event: 'Quarterly Planning Session'
+    },
+    { 
+      id: 2, 
+      src: '/images/studio/gallery2.jpg', 
+      alt: 'Client Presentation',
+      description: 'Presenting campaign results to our valued clients',
+      date: '2023-05-20',
+      event: 'Client Review Meeting'
+    },
+    { 
+      id: 3, 
+      src: '/images/studio/gallery3.jpg', 
+      alt: 'Team Building Event',
+      description: 'Annual team retreat to foster collaboration and creativity',
+      date: '2023-06-02',
+      event: 'Company Retreat'
+    },
+    { 
+      id: 4, 
+      src: '/images/studio/gallery4.jpg', 
+      alt: 'Workshop Session',
+      description: 'Training session on the latest digital marketing trends',
+      date: '2023-06-10',
+      event: 'Professional Development Workshop'
+    },
+    { 
+      id: 5, 
+      src: '/images/studio/gallery5.jpg', 
+      alt: 'Award Celebration',
+      description: 'Celebrating our team winning the Marketing Excellence Award',
+      date: '2023-06-15',
+      event: 'Industry Awards Ceremony'
+    },
+    { 
+      id: 6, 
+      src: '/images/studio/gallery6.jpg', 
+      alt: 'Office Environment',
+      description: 'Our creative workspace designed for collaboration and innovation',
+      date: '2023-06-20',
+      event: 'Office Open House'
+    }
+  ];
 
-const videos = [
-  { 
-    id: 1, 
-    title: 'Behind the Seams', 
-    src: '/videos/studio-tour.mp4', 
-    thumbnail: '/images/studio/video1.jpg',
-    description: 'Exclusive look at our celebrity styling process',
-    date: '2023-07-01',
-    duration: '2:45'
-  },
-  { 
-    id: 2, 
-    title: 'Runway Ready', 
-    src: '/videos/session.mp4', 
-    thumbnail: '/images/studio/video2.jpg',
-    description: 'Celebrity model preparing for fashion week in our latest collection',
-    date: '2023-07-15',
-    duration: '4:20'
-  },
-  { 
-    id: 3, 
-    title: 'Style Evolution', 
-    src: '/videos/behind-scenes.mp4', 
-    thumbnail: '/images/studio/video3.jpg',
-    description: 'Transforming a celebrity client from casual to red carpet ready',
-    date: '2023-08-05',
-    duration: '3:15'
-  }
-];
+  const videos = [
+    { 
+      id: 1, 
+      title: 'Meet Our Team', 
+      src: '/videos/team-introduction.mp4', 
+      thumbnail: '/images/studio/video1.jpg',
+      description: 'Get to know the talented individuals behind DreamBIG Marketing',
+      date: '2023-07-01',
+      duration: '2:45'
+    },
+    { 
+      id: 2, 
+      title: 'Company Culture', 
+      src: '/videos/company-culture.mp4', 
+      thumbnail: '/images/studio/video2.jpg',
+      description: 'A day in the life at DreamBIG Marketing Consultancy',
+      date: '2023-07-15',
+      duration: '4:20'
+    },
+    { 
+      id: 3, 
+      title: 'Client Testimonials', 
+      src: '/videos/client-feedback.mp4', 
+      thumbnail: '/images/studio/video3.jpg',
+      description: 'Hear what our clients say about working with us',
+      date: '2023-08-05',
+      duration: '3:15'
+    }
+  ];
 
-  // Create floating icons
   useEffect(() => {
-    const icons = ['FaImages', 'FaVideo', 'FaPlay', 'FaCamera', 'FaMusic', 'FaMicrophone'];
+    const icons = ['HiOutlinePhotograph', 'HiOutlineVideoCamera', 'HiOutlinePlay', 
+                  'HiOutlineCamera', 'HiOutlineMusicNote', 'HiOutlineMicrophone'];
     const newIcons = [];
     
     for (let i = 0; i < 12; i++) {
@@ -124,7 +130,6 @@ const videos = [
     setFloatingIcons(newIcons);
   }, []);
 
-  // Video controls
   const togglePlay = () => {
     if (isPlaying) {
       videoRef.current.pause();
@@ -184,7 +189,6 @@ const videos = [
     setIsPlaying(true);
   };
 
-  // Photo fullscreen controls
   const togglePhotoFullscreen = () => {
     setPhotoFullscreen(!photoFullscreen);
   };
@@ -196,7 +200,6 @@ const videos = [
     }
   };
 
-  // Handle fullscreen change events
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(document.fullscreenElement !== null);
@@ -206,7 +209,6 @@ const videos = [
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
-  // Handle keyboard events for photo fullscreen
   useEffect(() => {
     if (!photoFullscreen) return;
 
@@ -222,13 +224,12 @@ const videos = [
 
   return (
     <div className="studio-gallery-page">
-      {/* Background Elements */}
       <div className="studio-gallery-background"></div>
       
       {floatingIcons.map((icon) => (
         <motion.div
           key={icon.id}
-          className={`studio-gallery-floating-icon studio-gallery-${icon.icon}`}
+          className="studio-gallery-floating-icon"
           style={{
             fontSize: `${icon.size}px`,
             left: `${icon.left}%`,
@@ -244,16 +245,15 @@ const videos = [
             ease: 'linear'
           }}
         >
-          {icon.icon === 'FaImages' && <FaImages />}
-          {icon.icon === 'FaVideo' && <FaVideo />}
-          {icon.icon === 'FaPlay' && <FaPlay />}
-          {icon.icon === 'FaCamera' && <FaImages />}
-          {icon.icon === 'FaMusic' && <FaPlay />}
-          {icon.icon === 'FaMicrophone' && <FaVolumeUp />}
+          {icon.icon === 'HiOutlinePhotograph' && <HiOutlinePhotograph />}
+          {icon.icon === 'HiOutlineVideoCamera' && <HiOutlineVideoCamera />}
+          {icon.icon === 'HiOutlinePlay' && <HiOutlinePlay />}
+          {icon.icon === 'HiOutlineCamera' && <HiOutlinePhotograph />}
+          {icon.icon === 'HiOutlineMusicNote' && <HiOutlinePlay />}
+          {icon.icon === 'HiOutlineMicrophone' && <HiOutlineVolumeUp />}
         </motion.div>
       ))}
 
-      {/* Hero Section */}
       <motion.section 
         className="studio-gallery-hero"
         initial={{ opacity: 0, y: 50 }}
@@ -273,7 +273,7 @@ const videos = [
               transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse' }}
               className="highlight-word"
             >
-              Our
+              DreamBIG
             </motion.span>{' '}
             <motion.span
               initial={{ color: 'var(--white)' }}
@@ -289,15 +289,13 @@ const videos = [
             transition={{ delay: 0.5, duration: 1 }}
             className="studio-gallery-hero-subtitle"
           >
-            Explore our <span className="highlight-border">world-class</span> recording facilities
+            Capturing our team, culture, and journey at DreamBIG Marketing
           </motion.p>
         </div>
       </motion.section>
 
-      {/* Main Gallery Section */}
       <section className="studio-gallery-section">
         <div className="studio-gallery-container">
-          {/* Gallery Tabs */}
           <div className="studio-gallery-tabs">
             <motion.button 
               className={`studio-gallery-tab ${activeTab === 'photos' ? 'active' : ''}`}
@@ -305,7 +303,7 @@ const videos = [
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaImages /> Photos
+              <HiOutlinePhotograph className="tab-icon" /> Photos
             </motion.button>
             <motion.button 
               className={`studio-gallery-tab ${activeTab === 'videos' ? 'active' : ''}`}
@@ -313,11 +311,10 @@ const videos = [
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaVideo /> Videos
+              <HiOutlineVideoCamera className="tab-icon" /> Videos
             </motion.button>
           </div>
           
-          {/* Photos Gallery */}
           <AnimatePresence mode="wait">
             {activeTab === 'photos' && (
               <motion.div
@@ -348,7 +345,6 @@ const videos = [
             )}
           </AnimatePresence>
 
-          {/* Videos Gallery */}
           <AnimatePresence mode="wait">
             {activeTab === 'videos' && (
               <motion.div
@@ -371,7 +367,7 @@ const videos = [
                     <div className="studio-gallery-video-thumbnail">
                       <img src={video.thumbnail} alt={video.title} />
                       <button className="studio-gallery-video-play-button">
-                        <FaPlay />
+                        <HiOutlinePlay />
                       </button>
                     </div>
                     <h3>{video.title}</h3>
@@ -384,7 +380,6 @@ const videos = [
         </div>
       </section>
 
-      {/* Photo Modal */}
       <AnimatePresence>
         {selectedPhoto && (
           <motion.div 
@@ -412,7 +407,7 @@ const videos = [
                   setPhotoFullscreen(false);
                 }}
               >
-                <FaTimes />
+                <HiOutlineX />
               </button>
               
               <div className="studio-gallery-photo-container">
@@ -428,7 +423,7 @@ const videos = [
                     togglePhotoFullscreen();
                   }}
                 >
-                  {photoFullscreen ? <FaCompress /> : <FaExpand />}
+                  {photoFullscreen ? <HiOutlineArrowsExpand /> : <HiOutlineArrowsExpand />}
                 </button>
               </div>
               
@@ -438,7 +433,7 @@ const videos = [
                   <p>{selectedPhoto.description}</p>
                   <div className="studio-gallery-photo-modal-meta">
                     <span>Date: {selectedPhoto.date}</span>
-                    <span>Equipment: {selectedPhoto.equipment}</span>
+                    <span>Event: {selectedPhoto.event}</span>
                   </div>
                 </div>
               )}
@@ -447,7 +442,6 @@ const videos = [
         )}
       </AnimatePresence>
 
-      {/* Video Modal */}
       <AnimatePresence>
         {selectedVideo && (
           <motion.div 
@@ -471,7 +465,7 @@ const videos = [
                   setIsPlaying(false);
                 }}
               >
-                <FaTimes />
+                <HiOutlineX />
               </button>
               <div className="studio-gallery-video-player">
                 <video
@@ -484,11 +478,11 @@ const videos = [
                 />
                 <div className="studio-gallery-video-controls">
                   <button onClick={togglePlay} className="play-pause">
-                    {isPlaying ? <FaPause /> : <FaPlay />}
+                    {isPlaying ? <HiOutlinePause /> : <HiOutlinePlay />}
                   </button>
                   
                   <button onClick={toggleMute} className="volume-button">
-                    {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                    {isMuted ? <HiOutlineVolumeOff /> : <HiOutlineVolumeUp />}
                   </button>
                   
                   <input
@@ -513,13 +507,13 @@ const videos = [
                   </span>
                   
                   <button onClick={toggleFullscreen} className="fullscreen-button">
-                    {isFullscreen ? <FaCompress /> : <FaExpand />}
+                    {isFullscreen ? <HiOutlineArrowsExpand /> : <HiOutlineArrowsExpand />}
                   </button>
                 </div>
                 
                 {!isPlaying && currentTime >= duration && duration > 0 && (
                   <button className="replay-button" onClick={replayVideo}>
-                    <FaRedo /> Play Again
+                    <HiOutlineRefresh /> Play Again
                   </button>
                 )}
               </div>
@@ -532,7 +526,7 @@ const videos = [
                     setIsPlaying(false);
                   }}
                 >
-                  <FaTimes />
+                  <HiOutlineX />
                 </button>
               )}
               
