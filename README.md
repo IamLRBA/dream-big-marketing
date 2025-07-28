@@ -1,14 +1,14 @@
-# DreamBIG Marketing 
+# DreamBIG Marketing Consultancy
 
-![Culturez Background](./public/images/culturez-bg.PNG)
+![DreamBIG Background](./public/images/dreambig-bg.PNG)
 
 ---
 
 # Project Description
 
-This Culturez project is a professional website showcasing a premium fashion brand that blends urban culture with contemporary style. The platform serves as a digital hub for the brand, featuring product collections, lookbooks, brand story, and company details.
+This DreamBIG Marketing Consultancy project is a professional website showcasing comprehensive marketing services that help businesses grow and achieve their goals. The platform serves as a digital hub for the consultancy, featuring service offerings, case studies, team information, and client resources.
 
-Built as a modern single-page application using React, the website offers smooth navigation and responsive design to accommodate visitors across all device types. Key features include product showcases, collection galleries, shopping functionality, and informational pages about the brand.
+Built as a modern single-page application using React, the website offers smooth navigation and responsive design to accommodate visitors across all device types. Key features include service showcases, client testimonials, team profiles, blog content, and contact forms.
 
 ---
 
@@ -24,11 +24,12 @@ Built as a modern single-page application using React, the website offers smooth
 ## Features
 
 - Responsive design for all screen sizes
-- Smooth page transitions and scroll behaviors
-- Product collections and lookbooks
-- Shopping cart functionality
-- Brand story and philosophy
-- Contact forms and company information
+- Smooth page transitions and animations
+- Service showcases and case studies
+- Team gallery and company culture section
+- Marketing insights blog
+- Contact forms with multiple submission options
+- Interactive elements and hover effects
 - Back-to-top and scroll restoration functionality
 
 ---
@@ -63,12 +64,14 @@ npm run dev
 ## Project Structure
 
 src/
-├── components/       # Reusable UI components
-├── pages/            # Page components
-├── routes/           # Application routing
-├── styles/           # Global styles and CSS variables
-├── App.jsx           # Main application component
-└── main.jsx          # Application entry point
+├── components/ # Reusable UI components
+├── pages/ # Page components (Home, Services, About, Blog, Contact, etc.)
+├── routes/ # Application routing
+├── styles/ # Global styles and CSS variables
+├── assets/ # Images and other static assets
+├── utils/ # Utility functions and helpers
+├── App.jsx # Main application component
+└── main.jsx # Application entry point
 
 ---
 
@@ -95,4 +98,4 @@ Contributions are welcome. Please open an issue to discuss proposed changes befo
 
 ## License
 
-This project is proprietary software owned by Culturez®. All rights reserved.
+This project is proprietary software owned by DreamBIG Marketing Consultancy®. All rights reserved.
