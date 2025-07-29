@@ -1,6 +1,6 @@
 # DreamBIG Marketing Consultancy
 
-![DreamBIG Background](./public/images/dreambig-bg.jpg)
+![DreamBIG Background](...src/assets/images/dreambig-bg.jpg)
 
 ---
 
@@ -41,8 +41,8 @@ To set up this project locally, follow these steps:
 - **Clone the repository**:
 
 ```bash
-git clone https://github.com/IamLRBA/tizzy-camp-music.git
-cd tizzy-camp-music
+git clone https://github.com/IamLRBA/dream-big-marketing.git
+cd dream-big-marketing
 ```
 
 - **Install dependencies**:
