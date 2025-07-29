@@ -32,7 +32,7 @@ const Gallery = () => {
   const photos = [
     { 
       id: 1, 
-      src: '/images/studio/gallery1.jpg', 
+      src: '../assets/images/studio/gallery1.jpg', 
       alt: 'Team Strategy Meeting',
       description: 'Our marketing team brainstorming innovative strategies for client campaigns',
       date: '2023-05-15',
@@ -40,7 +40,7 @@ const Gallery = () => {
     },
     { 
       id: 2, 
-      src: '/images/studio/gallery2.jpg', 
+      src: '../assets/images/studio/gallery2.jpg', 
       alt: 'Client Presentation',
       description: 'Presenting campaign results to our valued clients',
       date: '2023-05-20',
@@ -48,7 +48,7 @@ const Gallery = () => {
     },
     { 
       id: 3, 
-      src: '/images/studio/gallery3.jpg', 
+      src: '../assets/images/studio/gallery3.jpg', 
       alt: 'Team Building Event',
       description: 'Annual team retreat to foster collaboration and creativity',
       date: '2023-06-02',
@@ -56,7 +56,7 @@ const Gallery = () => {
     },
     { 
       id: 4, 
-      src: '/images/studio/gallery4.jpg', 
+      src: '../assets/images/studio/gallery4.jpg', 
       alt: 'Workshop Session',
       description: 'Training session on the latest digital marketing trends',
       date: '2023-06-10',
@@ -64,7 +64,7 @@ const Gallery = () => {
     },
     { 
       id: 5, 
-      src: '/images/studio/gallery5.jpg', 
+      src: '../assets/images/studio/gallery5.jpg', 
       alt: 'Award Celebration',
       description: 'Celebrating our team winning the Marketing Excellence Award',
       date: '2023-06-15',
@@ -72,7 +72,7 @@ const Gallery = () => {
     },
     { 
       id: 6, 
-      src: '/images/studio/gallery6.jpg', 
+      src: '../assets/images/studio/gallery6.jpg', 
       alt: 'Office Environment',
       description: 'Our creative workspace designed for collaboration and innovation',
       date: '2023-06-20',
@@ -84,8 +84,8 @@ const Gallery = () => {
     { 
       id: 1, 
       title: 'Meet Our Team', 
-      src: '/videos/team-introduction.mp4', 
-      thumbnail: '/images/studio/video1.jpg',
+      src: '../assets/videos/team-introduction.mp4', 
+      thumbnail: '../assets/images/studio/video1.jpg',
       description: 'Get to know the talented individuals behind DreamBIG Marketing',
       date: '2023-07-01',
       duration: '2:45'
@@ -93,8 +93,8 @@ const Gallery = () => {
     { 
       id: 2, 
       title: 'Company Culture', 
-      src: '/videos/company-culture.mp4', 
-      thumbnail: '/images/studio/video2.jpg',
+      src: '../assets/videos/company-culture.mp4', 
+      thumbnail: '../assets/images/studio/video2.jpg',
       description: 'A day in the life at DreamBIG Marketing Consultancy',
       date: '2023-07-15',
       duration: '4:20'
@@ -102,8 +102,8 @@ const Gallery = () => {
     { 
       id: 3, 
       title: 'Client Testimonials', 
-      src: '/videos/client-feedback.mp4', 
-      thumbnail: '/images/studio/video3.jpg',
+      src: '../assets/videos/client-feedback.mp4', 
+      thumbnail: '../assets/images/studio/video3.jpg',
       description: 'Hear what our clients say about working with us',
       date: '2023-08-05',
       duration: '3:15'

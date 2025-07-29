@@ -15,7 +15,7 @@ const Blog = () => {
       excerpt: 'Discover the key digital marketing trends that will shape 2025 and how businesses can leverage them for growth.',
       date: '2025-06-15',
       author: 'Marketing Team',
-      image: '/images/blog/post1.jpg',
+      image: '../assets/images/blog/post1.jpg',
       slug: 'digital-marketing-trends'
     },
     {
@@ -24,7 +24,7 @@ const Blog = () => {
       excerpt: 'Learn the essential components of a successful brand strategy in today\'s competitive marketplace.',
       date: '2025-05-28',
       author: 'Strategy Team',
-      image: '/images/blog/post2.jpg',
+      image: '../assets/images/blog/post2.jpg',
       slug: 'brand-strategy'
     },
     {
@@ -33,7 +33,7 @@ const Blog = () => {
       excerpt: 'Proven tactics to boost engagement and build community on social media platforms.',
       date: '2025-05-10',
       author: 'Social Media Team',
-      image: '/images/blog/post3.jpg',
+      image: '../assets/images/blog/post3.jpg',
       slug: 'social-media-tactics'
     },
     {
@@ -42,7 +42,7 @@ const Blog = () => {
       excerpt: 'A comprehensive guide to accurately measure and improve your marketing return on investment.',
       date: '2025-04-22',
       author: 'Analytics Team',
-      image: '/images/blog/post4.jpg',
+      image: '../assets/images/blog/post4.jpg',
       slug: 'marketing-roi'
     }
   ];

@@ -58,7 +58,7 @@ const About = () => {
       name: 'Swaleh Kellah Liban',
       role: 'Founder & CEO',
       icon: <HiCrown />,  
-      image: '/images/team/ceo.jpg',
+      image: '../assets/images/team/ceo.jpg',
       extendedBio: 'With his visionary mindset and hands-on expertise in brand strategy and business development, our CEO leads DreamBig Marketing Consultancy with passion and purpose. He drives innovation, nurtures client relationships, and inspires the team to deliver bold, results-driven marketing solutions that make an impact.',
       social: {
         facebook: '#',
@@ -72,7 +72,7 @@ const About = () => {
       name: 'Shamsa Ally Liban (CPA-T)',
       role: 'Head of Accounts',
       icon: <HiOutlineCalculator />,
-      image: '/images/team/shamsa.jpg',
+      image: '../assets/images/team/shamsa.jpg',
       extendedBio: 'With years of  experience in financial leadership in the marketing industry, our Head of Accounts brings strategic insight and precision to every project. She ensures budgets are aligned with client goals, oversees financial planning, and collaborates closely with departments to drive sustainable growth and accountability.',
       social: {
         facebook: '#',
@@ -86,7 +86,7 @@ const About = () => {
       name: 'Mohammed Amiry Charity',
       role: 'Marketing Director',
       icon: <HiOutlineChartBar />,  
-      image: '/images/team/Mohammed.jpg',
+      image: '../assets/images/team/Mohammed.jpg',
       extendedBio: 'With a sharp eye for market trends and over a decade of campaign experience, our Marketing Director crafts compelling strategies that connect brands with their audiences. She leads the creative and digital teams to deliver innovative, data-driven marketing that drives engagement and elevates brand presence.',
       social: {
         facebook: '#',
@@ -100,7 +100,7 @@ const About = () => {
       name: 'Nasra Harith Mohammed',
       role: 'Digital Marketer',
       icon: <HiOutlineGlobeAlt />,
-      image: '/images/team/Nasra.jpg',
+      image: '../assets/images/team/Nasra.jpg',
       extendedBio: 'Equipped with a flair for analytics and creativity, our Digital Marketer specializes in turning clicks into conversions. With 7+ years of experience across SEO, social media, and paid campaigns, he ensures our clients stay ahead in the digital space through targeted strategies and continuous optimization.',
       social: {
         facebook: '#',
@@ -114,7 +114,7 @@ const About = () => {
       name: 'LRBA',
       role: ' Head of Technology',
       icon: <HiOutlineLightBulb />,  
-      image: '/images/team/LRBA.jpg',
+      image: '../assets/images/team/LRBA.jpg',
       extendedBio: 'With experience at the intersection of marketing and engineering, our Head of Technology turns ambitious ideas into scalable digital platforms. He leads the adoption of emerging tech—from AI‑driven analytics to cloud‑native infrastructure—ensuring every campaign is powered by speed, security, and seamless user experience.',
       social: {
         facebook: '#',
@@ -209,7 +209,7 @@ const About = () => {
 </div>
 
             <div className="about-history-image about-slide-in-right">
-              <img src="/images/about-image1.jpg" alt="Culturez History" />
+              <img src="../assets/images/about-image1.jpg" alt="Culturez History" />
             </div>
           </div>
         </div>

@@ -111,21 +111,21 @@ const Home = () => {
     {
       id: 'posta-campaign',
       name: 'POSTa Popote',
-      titleImage: '/images/portfolio/posta/posta-title.jpg',
+      titleImage: '../assets/images/portfolio/posta/posta-title.jpg',
       description: 'Increasing awareness and business adoption for Costa Tanzania postal services',
       details: "Implemented nationwide campaign targeting SMEs with tailored messaging across radio, TV, and digital platforms. Increased service adoption by 35% in first quarter."
     },
     {
       id: 'startimes-burudani',
       name: 'Burudani Bila Kikomo',
-      titleImage: '/images/portfolio/startimes/startimes-title.jpg',
+      titleImage: '../assets/images/portfolio/startimes/startimes-title.jpg',
       description: 'Reshaping marketing strategies with new pricing models and segmented programming like cartoons for kids',
       details: "Developed family-focused programming packages with tiered pricing. Campaign resulted in 22% subscriber growth and 40% increase in family plan signups."
     },
     {
       id: 'dse-inuka',
       name: 'Inuka na Hisa!',
-      titleImage: '/images/portfolio/dse/dse-title.jpg',
+      titleImage: '../assets/images/portfolio/dse/dse-title.jpg',
       description: 'Campaign to educate and encourage investment in the Dar es Salaam Stock Exchange',
       details: "Created financial literacy program targeting young professionals. Workshops, digital content, and simplified investment tools led to 15,000 new investor accounts in 6 months."
     }
@@ -136,35 +136,35 @@ const Home = () => {
       id: 1,
       name: 'Peter Johnson Michael',
       role: 'Marketing Director',
-      image: '/images/testimonials/client1.jpg',
+      image: '../assets/images/testimonials/client1.jpg',
       text: 'DreamBIG transformed our brand strategy with innovative campaigns that doubled our engagement metrics.'
     },
     {
       id: 2,
       name: 'Gloria Chenwo',
       role: 'CEO, TechStart',
-      image: '/images/testimonials/client2.jpg',
+      image: '../assets/images/testimonials/client2.jpg',
       text: 'Their data-driven approach helped us penetrate new markets with 40% less acquisition costs.'
     },
     {
       id: 3,
       name: 'David Miller Towongo',
       role: 'CMO, RetailCorp',
-      image: '/images/testimonials/client3.jpg',
+      image: '../assets/images/testimonials/client3.jpg',
       text: 'The digital transformation they implemented increased our conversion rate by 78% in just 3 months.'
     },
     {
       id: 4,
       name: 'Emily Mubarak',
       role: 'Brand Manager',
-      image: '/images/testimonials/client4.jpg',
+      image: '../assets/images/testimonials/client4.jpg',
       text: 'Their creative campaigns consistently outperform industry benchmarks and deliver measurable ROI.'
     },
     {
       id: 5,
       name: 'Abdul Wilson',
       role: 'Startup Founder',
-      image: '/images/testimonials/client5.jpg',
+      image: '../assets/images/testimonials/client5.jpg',
       text: 'DreamBIG helped us establish brand identity and market positioning that attracted key investors.'
     }
   ];
@@ -234,7 +234,7 @@ const Home = () => {
             ease: "linear"
           }}
         >
-          <img src="/images/services/logo.png" alt="DreamBIG Marketing" />
+          <img src="../assets/images/services/logo.png" alt="DreamBIG Marketing" />
         </motion.div>
       </section>
 
@@ -328,7 +328,7 @@ const Home = () => {
               style={{ cursor: 'pointer' }}
             >
               <motion.img
-                src="/images/pointing-down.jpg"
+                src="../assets/images/pointing-down.jpg"
                 alt="Pointing down"
                 className={`home-pointer-img ${clicked ? 'clicked' : ''}`}
                 initial={{ scale: 0 }}
@@ -364,7 +364,7 @@ const Home = () => {
           >
             <div className="home-message-image-container">
               <div className="home-message-image">
-                <img src="/images/contact-image1.jpg" alt="Contact Us" />
+                <img src="../assets/images/contact-image1.jpg" alt="Contact Us" />
               </div>
               <div className="home-support-badge">
                 <RiCustomerService2Fill />

@@ -38,7 +38,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/images/bg-services5.jpg') center/cover no-repeat;
+  background: url('../assets/images/bg-services5.jpg') center/cover no-repeat;
   filter: blur(6px) brightness(0.4);
   z-index: -2;
   animation: aboutBackgroundPan 120s linear infinite;

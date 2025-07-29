@@ -129,14 +129,14 @@ const Contact = () => {
 
   // Social media platforms with image paths
   const socialMedia = [
-    { name: 'TikTok', icon: '/images/social/tiktok.png', url: 'https://www.tiktok.com/@dbigmkwww.tiktok.com/@dbigmkt' },
-    { name: 'Instagram', icon: '/images/social/instagram.png', url: 'https://www.instagram.com/dbigmkt/' },
-    { name: 'Facebook', icon: '/images/social/facebook.png', url: 'https://www.facebook.com/share/1WWcyXB7qR/' },
-    { name: 'LinkedIn', icon: '/images/social/linkedin.png', url: 'https://www.linkedin.com/in/dream-big-marketing-consultancy-a70b15374' },
-    { name: 'YouTube', icon: '/images/social/youtube.png', url: 'https://www.youtube.com/@DbigMkt' },
-    { name: 'X', icon: '/images/social/x.png', url: 'https://x.com/dbigmkt' },
-    { name: 'Email', icon: '/images/social/email.png', url: 'mailto:dbigmkt@gmail.com' },
-    { name: 'WhatsApp', icon: '/images/social/whatsapp.png', url: 'https://wa.me/255657125229' }
+    { name: 'TikTok', icon: '../assets/images/social/tiktok.png', url: 'https://www.tiktok.com/@dbigmkwww.tiktok.com/@dbigmkt' },
+    { name: 'Instagram', icon: '../assets/images/social/instagram.png', url: 'https://www.instagram.com/dbigmkt/' },
+    { name: 'Facebook', icon: '../assets/images/social/facebook.png', url: 'https://www.facebook.com/share/1WWcyXB7qR/' },
+    { name: 'LinkedIn', icon: '../assets/images/social/linkedin.png', url: 'https://www.linkedin.com/in/dream-big-marketing-consultancy-a70b15374' },
+    { name: 'YouTube', icon: '../assets/images/social/youtube.png', url: 'https://www.youtube.com/@DbigMkt' },
+    { name: 'X', icon: '../assets/images/social/x.png', url: 'https://x.com/dbigmkt' },
+    { name: 'Email', icon: '../assets/images/social/email.png', url: 'mailto:dbigmkt@gmail.com' },
+    { name: 'WhatsApp', icon: '../assets/images/social/whatsapp.png', url: 'https://wa.me/255657125229' }
   ];
 
   const handleSocialClick = (e, url) => {
@@ -426,7 +426,7 @@ const Contact = () => {
           >
             <div className="contact-form-image-container">
               <div className="contact-form-image">
-                <img src="/images/contact-image1.jpg" alt="Contact Us" />
+                <img src="../assets/images/contact-image1.jpg" alt="Contact Us" />
               </div>
               <div className="contact-support-badge">
                 <RiCustomerService2Fill />
