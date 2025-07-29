@@ -12,7 +12,7 @@ import {
 } from 'react-icons/hi2';
 import './ServiceCard.css';
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service, anchorId }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const getServiceIcon = () => {
@@ -51,6 +51,7 @@ const ServiceCard = ({ service }) => {
 
   return (
     <motion.div 
+      id={anchorId}  // Added anchor ID here
       className={`service-card ${isExpanded ? 'expanded' : ''}`}
       onClick={() => setIsExpanded(!isExpanded)}
       layout

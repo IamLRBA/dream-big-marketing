@@ -4,10 +4,20 @@ import { Link } from 'react-router-dom';
 import ServiceCard from '../../components/ServiceCard';
 import './Services.css';
 
+// Helper function to convert category to URL-friendly format
+const toKebabCase = (str) => {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9 -]/g, '') // Remove invalid chars
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/-+/g, '-'); // Replace multiple - with single -
+};
+
 const Services = () => {
   const servicesData = [
     {
       id: 1,
+      anchorId: toKebabCase('Strategic Marketing & Brand Development'),
       category: 'Strategic Marketing & Brand Development',
       services: [
         'Marketing strategy planning (short- and long-term)',
@@ -17,6 +27,7 @@ const Services = () => {
     },
     {
       id: 2,
+      anchorId: toKebabCase('Digital Marketing & Online Campaigns'),
       category: 'Digital Marketing & Online Campaigns',
       services: [
         'Social media marketing (Facebook, Instagram, LinkedIn, TikTok)',
@@ -26,6 +37,7 @@ const Services = () => {
     },
     {
       id: 3,
+      anchorId: toKebabCase('Content Creation & Creative Design'),
       category: 'Content Creation & Creative Design',
       services: [
         'Visual campaigns (graphics, video, animation)',
@@ -35,6 +47,7 @@ const Services = () => {
     },
     {
       id: 4,
+      anchorId: toKebabCase('Corporate Communications & PR'),
       category: 'Corporate Communications & PR',
       services: [
         'Brand storytelling & reputation management',
@@ -44,6 +57,7 @@ const Services = () => {
     },
     {
       id: 5,
+      anchorId: toKebabCase('Marketing for Startups & SMEs'),
       category: 'Marketing for Startups & SMEs',
       services: [
         'Go-to-market strategy for new businesses',
@@ -53,6 +67,7 @@ const Services = () => {
     },
     {
       id: 6,
+      anchorId: toKebabCase('Market Research & Consumer Insights'),
       category: 'Market Research & Consumer Insights',
       services: [
         'Product testing & market entry evaluations',
@@ -61,6 +76,7 @@ const Services = () => {
     },
     {
       id: 7,
+      anchorId: toKebabCase('Training & Capacity Building'),
       category: 'Training & Capacity Building',
       services: [
         'Corporate training on marketing, branding, and digital tools',
@@ -140,7 +156,11 @@ const Services = () => {
             viewport={{ once: true }}
           >
             {servicesData.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard 
+                key={service.id} 
+                service={service} 
+                anchorId={service.anchorId} 
+              />
             ))}
           </motion.div>
         </div>
@@ -157,7 +177,7 @@ const Services = () => {
           >
             <h3 className="services-cta-title">Ready to grow your business?</h3>
             <div className="services-cta-buttons">
-              <Link to="/culturez/featured" className="services-cta-button">
+              <Link to="/portfolio" className="services-cta-button">
                 View Our Featured Works
               </Link>
               <Link to="/contact" className="services-cta-button primary">

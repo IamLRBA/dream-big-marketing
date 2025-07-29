@@ -115,7 +115,7 @@ const Navbar = () => {
               <div className="search-input-wrapper">
                 <input
                   type="text"
-                  placeholder="Search products"
+                  placeholder="Search services"
                   value={searchQuery}
                   onChange={handleSearchChange}
                   className="navbar-search-input"
