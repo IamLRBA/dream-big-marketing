@@ -88,7 +88,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-culturez-logo">
           <div className="logo-container">
-            <img src="../assets/images/logo.png" alt="Logo" className="navbar-logo-image" />
+            <img src="/images/logo.png" alt="Logo" className="navbar-logo-image" />
 
             <span></span>
           </div>

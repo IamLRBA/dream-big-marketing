@@ -1,6 +1,6 @@
 # DreamBIG Marketing Consultancy
 
-![DreamBIG Background](...src/assets/images/dreambig-bg.jpg)
+![DreamBIG Background](./public/images/dreambig-bg.jpg)
 
 ---
 

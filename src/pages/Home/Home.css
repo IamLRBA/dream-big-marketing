@@ -9,7 +9,7 @@
   content: '';
   position: absolute;
   inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
-  background: url('../assets/images/bg-services28.jpg') center/cover no-repeat;
+  background: url('/images/bg-services28.jpg') center/cover no-repeat;
   filter: blur(20px);
   margin-bottom: 200px;
   z-index: -1;
@@ -30,7 +30,7 @@
 }
 
 .home-hero-content {
-  background: url('../assets/images/hero-background.png') center/550px 550px no-repeat;
+  background: url('/images/hero-background.png') center/550px 550px no-repeat;
   background-position: center calc(50% - 70px);
   padding: 40px;
   border-radius: 20px;

@@ -10,17 +10,17 @@ const Exhibition = () => {
     {
       id: 1,
       name: 'Collaborations',
-      images: Array(10).fill().map((_, i) => `../assets/images/products/exhibition/collabs-${i+1}.jpg`)
+      images: Array(10).fill().map((_, i) => `/images/products/exhibition/collabs-${i+1}.jpg`)
     },
     {
       id: 2,
       name: 'Styled Works',
-      images: Array(10).fill().map((_, i) => `../assets/images/products/exhibition/styled-${i+1}.jpg`)
+      images: Array(10).fill().map((_, i) => `/images/products/exhibition/styled-${i+1}.jpg`)
     },
     {
       id: 3,
       name: 'Design Exhibitions',
-      images: Array(10).fill().map((_, i) => `../assets/images/products/exhibition/design-${i+1}.jpg`)
+      images: Array(10).fill().map((_, i) => `/images/products/exhibition/design-${i+1}.jpg`)
     }
   ];
 

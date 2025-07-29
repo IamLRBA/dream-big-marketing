@@ -38,14 +38,14 @@ const ServiceCard = ({ service, anchorId }) => {
 
   const getPlaceholderImage = () => {
     switch(service.id) {
-      case 1: return '../assets/images/services/strategy-placeholder.jpg';
-      case 2: return '../assets/images/services/digital-placeholder.jpg';
-      case 3: return '../assets/images/services/content-placeholder.jpg';
-      case 4: return '../assets/images/services/pr-placeholder.jpg';
-      case 5: return '../assets/images/services/startups-placeholder.jpg';
-      case 6: return '../assets/images/services/research-placeholder.jpg';
-      case 7: return '../assets/images/services/training-placeholder.jpg';
-      default: return '../assets/images/services/placeholder.jpg';
+      case 1: return '/images/services/strategy-placeholder.jpg';
+      case 2: return '/images/services/digital-placeholder.jpg';
+      case 3: return '/images/services/content-placeholder.jpg';
+      case 4: return '/images/services/pr-placeholder.jpg';
+      case 5: return '/images/services/startups-placeholder.jpg';
+      case 6: return '/images/services/research-placeholder.jpg';
+      case 7: return '/images/services/training-placeholder.jpg';
+      default: return '/images/services/placeholder.jpg';
     }
   };
 
