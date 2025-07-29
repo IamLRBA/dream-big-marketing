@@ -209,8 +209,6 @@
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
   background: var(--white);
-  border: 2px solid var(--secondary-color);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .home-release-card:hover {
@@ -218,7 +216,7 @@
 }
 
 .home-release-card:hover .home-release-category {
-  background: rgba(0, 29, 62, 0.9);
+  background: var(--secondary-color);
 }
 
 .home-release-card.expanded {
@@ -242,11 +240,11 @@
 .home-release-category {
   position: absolute;
   margin-bottom: 0;
-  bottom: -30px;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 60px;
-  background: rgba(0, 48, 103, 0.85);
+  background: var(--secondary-color);
   color: white;
   padding: 15px;
   text-align: center;
