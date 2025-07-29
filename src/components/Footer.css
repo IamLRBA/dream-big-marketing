@@ -286,6 +286,16 @@
   margin: 0;
 }
 
+.designed-by {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.designed-by a {
+  color: inherit;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .footer-container {
