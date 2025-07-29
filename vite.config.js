@@ -12,6 +12,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsInlineLimit: 4096,
     emptyOutDir: true
+    assetsDir: 'assets',
   },
   css: {
     modules: {
@@ -22,5 +23,6 @@ export default defineConfig({
         additionalData: `@import "./src/styles/variables.css";`
       }
     }
-  }
+  },
+  base: '/',
 })
