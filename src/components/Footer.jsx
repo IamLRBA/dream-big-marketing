@@ -109,7 +109,9 @@ const Footer = () => {
         <p className="copyright">
           &copy; {new Date().getFullYear()} Dream Big Marketing Consultancy. All rights reserved.
         </p>
-        <p className="copyright">Designed by - LRBA</p>
+        <p className="designed-by">
+  Designed by - <a href="https://www.instagram.com/iamlrba?igsh=MXcwcTF3b3R6ZG9yeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">LRBA</a>
+</p>
       </div>
     </footer>
   );
