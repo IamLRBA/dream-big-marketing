@@ -10,6 +10,7 @@ import {
   HiOutlineX,
   HiOutlineMenu
 } from 'react-icons/hi';
+import logo from '/images/logo.png';
 import { HiOutlineCog6Tooth } from 'react-icons/hi2';
 import { useSearch } from './SearchContext';
 import './Navbar.css';
@@ -87,7 +88,10 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-culturez-logo">
-          <span>DREAM BIG</span>
+          <div className="logo-container">
+            <img src={logo} alt="Logo" className="navbar-logo-image" />
+            <span></span>
+          </div>
         </Link>
 
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>

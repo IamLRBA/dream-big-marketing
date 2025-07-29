@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
-import { FaArrowRight, FaWhatsapp, FaEnvelope, FaComment, FaTimes } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import { FaWhatsapp, FaEnvelope, FaComment } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import { ImSpinner8 } from 'react-icons/im';
 import { IoCheckmarkDone } from 'react-icons/io5';
 import { MdErrorOutline } from 'react-icons/md';
@@ -68,7 +68,7 @@ const Home = () => {
     setError(null);
 
     if (formData.contactMethod === 'whatsapp') {
-      const phoneNumber = '256760316738';
+      const phoneNumber = '255657125229';
       const message = encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
       );
@@ -107,77 +107,65 @@ const Home = () => {
     });
   };
 
-  const culturezItems = [
+  const featuredWorks = [
     {
-      id: 1,
-      title: 'Signature T-Shirt',
-      category: 'T-Shirts',
-      cover: '/images/culturez/tshirt.jpg',
-      date: '2023-06-15',
-      description: 'Our premium cotton t-shirt with unique Culturez® embroidery. Made from 100% organic cotton with a tailored fit for maximum comfort.',
-      price: '$39.99',
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['Black', 'White', 'Olive']
+      id: 'posta-campaign',
+      name: 'POSTa Popote',
+      titleImage: '/images/portfolio/posta/posta-title.jpg',
+      description: 'Increasing awareness and business adoption for Costa Tanzania postal services',
+      details: "Implemented nationwide campaign targeting SMEs with tailored messaging across radio, TV, and digital platforms. Increased service adoption by 35% in first quarter."
     },
     {
-      id: 2,
-      title: 'Designer Pants',
-      category: 'Pants',
-      cover: '/images/culturez/pants.jpg',
-      date: '2023-06-10',
-      description: 'Slim-fit and baggy designer pants with premium stitching and durable fabric. Perfect for both casual and semi-formal occasions.',
-      price: '$79.99',
-      sizes: ['28-32', '34-38', '40-44'],
-      colors: ['Black', 'Khaki', 'Navy']
+      id: 'startimes-burudani',
+      name: 'Burudani Bila Kikomo',
+      titleImage: '/images/portfolio/startimes/startimes-title.jpg',
+      description: 'Reshaping marketing strategies with new pricing models and segmented programming like cartoons for kids',
+      details: "Developed family-focused programming packages with tiered pricing. Campaign resulted in 22% subscriber growth and 40% increase in family plan signups."
     },
     {
-      id: 3,
-      title: 'Premium Hoodie',
-      category: 'Hoodies',
-      cover: '/images/culturez/sweater.jpg',
-      date: '2023-05-20',
-      description: 'Hand-knitted premium wool hoodie with unique patterns. Keeps you warm while maintaining style during colder seasons.',
-      price: '$89.99',
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['Cream', 'Gray', 'Burgundy']
+      id: 'dse-inuka',
+      name: 'Inuka na Hisa!',
+      titleImage: '/images/portfolio/dse/dse-title.jpg',
+      description: 'Campaign to educate and encourage investment in the Dar es Salaam Stock Exchange',
+      details: "Created financial literacy program targeting young professionals. Workshops, digital content, and simplified investment tools led to 15,000 new investor accounts in 6 months."
     }
   ];
 
   const testimonials = [
     {
       id: 1,
-      name: 'Mayulu Johnson',
-      role: 'Fashion Blogger',
+      name: 'Peter Johnson Michael',
+      role: 'Marketing Director',
       image: '/images/testimonials/client1.jpg',
-      text: 'Culturez® has completely transformed my wardrobe. The quality and unique designs are unmatched in the market.'
+      text: 'DreamBIG transformed our brand strategy with innovative campaigns that doubled our engagement metrics.'
     },
     {
       id: 2,
-      name: 'Mugabi Williams',
-      role: 'Stylist',
+      name: 'Gloria Chenwo',
+      role: 'CEO, TechStart',
       image: '/images/testimonials/client2.jpg',
-      text: 'My clients always ask where I get these amazing pieces. Culturez® is my go-to for statement fashion items.'
+      text: 'Their data-driven approach helped us penetrate new markets with 40% less acquisition costs.'
     },
     {
       id: 3,
-      name: 'Michael Chen',
-      role: 'Entrepreneur',
+      name: 'David Miller Towongo',
+      role: 'CMO, RetailCorp',
       image: '/images/testimonials/client3.jpg',
-      text: 'The attention to detail in every Culturez piece is remarkable. Worth every penny for the quality you get.'
+      text: 'The digital transformation they implemented increased our conversion rate by 78% in just 3 months.'
     },
     {
       id: 4,
-      name: 'Mason Park',
-      role: 'Model',
+      name: 'Emily Mubarak',
+      role: 'Brand Manager',
       image: '/images/testimonials/client4.jpg',
-      text: 'I wear Culturez® to all my castings. The designs make me stand out and the comfort is unbeatable.'
+      text: 'Their creative campaigns consistently outperform industry benchmarks and deliver measurable ROI.'
     },
     {
       id: 5,
-      name: 'David Miller',
-      role: 'Photographer',
+      name: 'Abdul Wilson',
+      role: 'Startup Founder',
       image: '/images/testimonials/client5.jpg',
-      text: 'As someone who works in fashion, I can confidently say Culturez® is setting new standards in urban wear.'
+      text: 'DreamBIG helped us establish brand identity and market positioning that attracted key investors.'
     }
   ];
 
@@ -189,7 +177,6 @@ const Home = () => {
     <div className="home-page">
       <section className={`home-hero-section ${heroLoaded ? 'loaded' : ''}`}>
         <div className="home-hero-background"></div>
-        <div className="home-hero-overlay"></div>
         <div className="home-hero-content">
           <motion.h1 
             className="home-hero-title"
@@ -203,7 +190,7 @@ const Home = () => {
               damping: 10
             }}
           >
-            <span className="home-color-changing">CULTUREZ®</span> Fashion Store
+            <span className="home-color-changing">DreamBIG Marketing Consultancy</span>
           </motion.h1>
           <motion.p 
             className="home-hero-subtitle"
@@ -217,7 +204,7 @@ const Home = () => {
               damping: 10
             }}
           >
-            Where style meets culture and every piece tells a story
+            Where innovative marketing strategies meet measurable business growth
           </motion.p>
           <motion.div 
             className="home-hero-buttons"
@@ -231,8 +218,8 @@ const Home = () => {
               damping: 10
             }}
           >
-            <NavLink to="/shop" className="home-shop-btn home-pulse-animate">Visit Our Shop</NavLink>
-            <NavLink to="/about" className="home-about-btn home-btn-outline home-pulse-animate">Know Us</NavLink>
+            <NavLink to="/services" className="home-shop-btn home-pulse-animate">Our Services</NavLink>
+            <NavLink to="/about" className="home-about-btn home-btn-outline home-pulse-animate">About Us</NavLink>
           </motion.div>
         </div>
         
@@ -247,18 +234,17 @@ const Home = () => {
             ease: "linear"
           }}
         >
-          <div className="home-pivot-reflection"></div>
-          <img src="/images/services/logo.png" alt="Culturez" />
+          <img src="/images/services/logo.png" alt="DreamBIG Marketing" />
         </motion.div>
       </section>
 
       <section className="home-section home-culturez-section">
         <div className="home-container">
           <h2 className="home-section-title">
-            <span className="home-highlighted-border">Culturez®</span> by Smith
+            <span className="home-highlighted-border">Featured</span> Works
           </h2>
           <div className="home-releases-grid">
-            {culturezItems.map((item, index) => (
+            {featuredWorks.map((item, index) => (
               <motion.div
                 key={item.id}
                 layout
@@ -272,33 +258,97 @@ const Home = () => {
                 <div 
                   className="home-release-card-image"
                   style={{ 
-                    backgroundImage: `url(${item.cover})`,
+                    backgroundImage: `url(${item.titleImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
                   }}
                 >
-                  <div className="home-release-category">{item.category}</div>
+                  <div className="home-release-category">{item.name}</div>
                 </div>
-                {expandedRelease === item.id && (
-                  <div className="home-release-card-details">
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                    <div className="home-product-details">
-                      <p><strong>Price:</strong> {item.price}</p>
-                      <p><strong>Sizes:</strong> {item.sizes.join(', ')}</p>
-                      <p><strong>Colors:</strong> {item.colors.join(', ')}</p>
+                <div className={`home-release-card-details ${expandedRelease === item.id ? 'expanded' : ''}`}>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  {expandedRelease === item.id && (
+                    <div className="home-release-expanded-details">
+                      <p>{item.details}</p>
+                      <Link 
+                        to={`/portfolio#${item.id}`} 
+                        className="home-release-learn-more"
+                      >
+                        View Case Study ⇒
+                      </Link>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
 
           <div className="home-section-footer">
-            <NavLink to="/culturez" className="home-release-btn">
-              View Our Full Collection <FaArrowRight />
+            <NavLink to="/portfolio" className="home-release-btn">
+              View Full Portfolio ⇒
             </NavLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-section home-gallery-section">
+        {galleryBubbles.map((bubble) => (
+          <div 
+            key={bubble.id}
+            className="home-gallery-bubble"
+            style={{
+              width: `${bubble.size}px`,
+              height: `${bubble.size}px`,
+              top: `${bubble.top}%`,
+              left: `${bubble.left}%`,
+              animationDuration: `${bubble.animationDuration}s`,
+              animationDelay: `${bubble.animationDelay}s`,
+              opacity: bubble.opacity
+            }}
+          />
+        ))}
+        <div className="home-container">
+          <motion.h2 
+            className="home-animated-float-title"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="home-float-word">Tap To View</span>
+            <span className="home-float-word home-highlight-border">Gallery</span>
+          </motion.h2>
+
+          <div className="home-pointer-illustration">
+            <div
+              onClick={handleImageClick}
+              aria-label="Go to Gallery Page"
+              className="home-pointer-link"
+              style={{ cursor: 'pointer' }}
+            >
+              <motion.img
+                src="/images/pointing-down.jpg"
+                alt="Pointing down"
+                className={`home-pointer-img ${clicked ? 'clicked' : ''}`}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-section home-testimonials-section">
+        <div className="home-container">
+          <h2 className="home-section-title"><span className="home-highlighted-border">Client</span> Testimonials</h2>
+          <div className="home-testimonials-slider-container">
+            <div className="home-testimonials-slider">
+              {testimonials.map((testimonial) => (
+                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -392,7 +442,7 @@ const Home = () => {
                       checked={formData.contactMethod === 'email'}
                       onChange={handleInputChange}
                     />
-                    <span>Email</span>
+                    <span> Email</span>
                   </label>
                   <label className={`home-contact-method-label ${formData.contactMethod === 'whatsapp' ? 'home-contact-active' : ''}`}>
                     <input 
@@ -402,7 +452,7 @@ const Home = () => {
                       checked={formData.contactMethod === 'whatsapp'}
                       onChange={handleInputChange}
                     />
-                    <span>WhatsApp</span>
+                    <span><FaWhatsapp style={{ marginRight: '8px' }} /> WhatsApp</span>
                   </label>
                   <label className={`home-contact-method-label ${formData.contactMethod === 'text' ? 'home-contact-active' : ''}`}>
                     <input 
@@ -412,7 +462,7 @@ const Home = () => {
                       checked={formData.contactMethod === 'text'}
                       onChange={handleInputChange}
                     />
-                    <span>Text Message</span>
+                    <span> Text Message</span>
                   </label>
                 </div>
               </div>
@@ -474,76 +524,6 @@ const Home = () => {
           </div>
         </div>
       )}
-
-      <section className="home-section home-gallery-section">
-        {galleryBubbles.map((bubble) => (
-          <div 
-            key={bubble.id}
-            className="home-gallery-bubble"
-            style={{
-              width: `${bubble.size}px`,
-              height: `${bubble.size}px`,
-              top: `${bubble.top}%`,
-              left: `${bubble.left}%`,
-              animationDuration: `${bubble.animationDuration}s`,
-              animationDelay: `${bubble.animationDelay}s`,
-              opacity: bubble.opacity
-            }}
-          />
-        ))}
-        <div className="home-container">
-          <motion.h2 
-            className="home-animated-float-title"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="home-float-word">Tap To View</span>
-            <span className="home-float-word home-highlight-border">Gallery</span>
-          </motion.h2>
-
-          <div className="home-pointer-illustration">
-            <div
-              onClick={handleImageClick}
-              aria-label="Go to Gallery Page"
-              className="home-pointer-link"
-              style={{ cursor: 'pointer' }}
-            >
-              <motion.img
-                src="/images/pointing-down.jpg"
-                alt="Pointing down"
-                className={`home-pointer-img ${clicked ? 'clicked' : ''}`}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="home-section home-testimonials-section">
-        <div className="home-container">
-          <h2 className="home-section-title"><span className="home-highlighted-border">Client</span> Testimonials</h2>
-          <div className="home-testimonials-slider-container">
-            <div className="home-testimonials-slider">
-              {testimonials.map((testimonial) => (
-                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="home-section home-contact-cta-section">
-        <div className="home-container">
-          <div className="home-contact-cta-content">
-            <h2 className="home-section-title">Any Questions?</h2>
-            <p>Get in touch with our fashion consultants for personalized recommendations!</p>
-            <NavLink to="/contact" className="home-cta-btn">Contact Us</NavLink>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

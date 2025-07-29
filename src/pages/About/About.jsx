@@ -63,8 +63,8 @@ const About = () => {
       social: {
         facebook: '#',
         twitter: '#',
-        instagram: '#',
-        linkedin: '#'
+        instagram: 'https://www.instagram.com/herithliban',
+        linkedin: 'https://www.linkedin.com/in/swaleh-liban-6714b8234'
       }
     },
     {
@@ -92,7 +92,7 @@ const About = () => {
         facebook: '#',
         twitter: '#',
         instagram: '#',
-        linkedin: '#'
+        linkedin: 'https://www.linkedin.com/in/mohamed-charity-25893a307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
       }
     },
     {
