@@ -49,52 +49,52 @@ const Portfolio = () => {
       {
         id: 'startimes-burudani',
         name: 'Burudani Bila Kikomo',
-        titleImage: '../assets/images/portfolio/startimes/startimes-title.jpg',
+        titleImage: '/images/portfolio/startimes/startimes-title.jpg',
         description: 'Reshaping marketing strategies with new pricing models and segmented programming like cartoons for kids',
-        images: Array(14).fill().map((_, i) => `../assets/images/portfolio/startimes/startimes-${i+1}.jpg`)
+        images: Array(14).fill().map((_, i) => `/images/portfolio/startimes/startimes-${i+1}.jpg`)
       }
     ],
     'KFC & YANGA SC': [
       {
         id: 'kfc-yanga-ladha',
         name: 'Ladha ya Ushindi',
-        titleImage: '../assets/images/portfolio/kfc-yanga/kfc-yanga-title.jpg',
+        titleImage: '/images/portfolio/kfc-yanga/kfc-yanga-title.jpg',
         description: 'Merging with YANGA SC to tap into their 10M+ fanbase, increasing customer engagement and sales',
-        images: Array(8).fill().map((_, i) => `../assets/images/portfolio/kfc-yanga/kfc-yanga-${i+1}.jpg`)
+        images: Array(8).fill().map((_, i) => `/images/portfolio/kfc-yanga/kfc-yanga-${i+1}.jpg`)
       },
       {
         id: 'yanga-hatushikiki',
         name: 'Hatushikiki Campaign',
-        titleImage: '../assets/images/portfolio/yanga-hatushikiki/yanga-hatushikiki-title.jpg',
+        titleImage: '/images/portfolio/yanga-hatushikiki/yanga-hatushikiki-title.jpg',
         description: 'Celebrating 4 premier league titles and 5 derby wins, bringing partnerships with KFC, DTB and Puma',
-        images: Array(5).fill().map((_, i) => `../assets/images/portfolio/yanga-hatushikiki/yanga-hatushikiki-${i+1}.jpg`)
+        images: Array(5).fill().map((_, i) => `/images/portfolio/yanga-hatushikiki/yanga-hatushikiki-${i+1}.jpg`)
       }
     ],
     'Posta': [
       {
         id: 'posta-campaign',
         name: 'POSTa Popote',
-        titleImage: '../assets/images/portfolio/posta/posta-title.jpg',
+        titleImage: '/images/portfolio/posta/posta-title.jpg',
         description: 'Increasing awareness and business adoption for Costa Tanzania postal services',
-        images: Array(21).fill().map((_, i) => `../assets/images/portfolio/posta/posta-${i+1}.jpg`)
+        images: Array(21).fill().map((_, i) => `/images/portfolio/posta/posta-${i+1}.jpg`)
       }
     ],
     'DSE': [
       {
         id: 'dse-inuka',
         name: 'Inuka na Hisa!',
-        titleImage: '../assets/images/portfolio/dse/dse-title.jpg',
+        titleImage: '/images/portfolio/dse/dse-title.jpg',
         description: 'Campaign to educate and encourage investment in the Dar es Salaam Stock Exchange',
-        images: Array(7).fill().map((_, i) => `../assets/images/portfolio/dse/dse-${i+1}.jpg`)
+        images: Array(7).fill().map((_, i) => `/images/portfolio/dse/dse-${i+1}.jpg`)
       }
     ],
     'DTB & YANGA SC': [
       {
         id: 'dtb-yanga-green',
         name: 'In the Green & Yellow',
-        titleImage: '../assets/images/portfolio/dtb-yanga/dtb-yanga-title.jpg',
+        titleImage: '/images/portfolio/dtb-yanga/dtb-yanga-title.jpg',
         description: 'Launching a podcast and branding campaign for YANGA SC with Diamond Trust Bank',
-        images: Array(10).fill().map((_, i) => `../assets/images/portfolio/dtb-yanga/dtb-yanga-${i+1}.jpg`)
+        images: Array(10).fill().map((_, i) => `/images/portfolio/dtb-yanga/dtb-yanga-${i+1}.jpg`)
       }
     ]
   };

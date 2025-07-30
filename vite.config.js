@@ -1,8 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@public': path.resolve(__dirname, './public'),
+    }
+  },
   server: {
     host: 'localhost',
     port: 3000,
@@ -11,7 +18,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsInlineLimit: 4096,
-    emptyOutDir: true
+    emptyOutDir: true,
+    assetsDir: 'assets',
   },
   css: {
     modules: {
@@ -19,8 +27,9 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/styles/variables.css";`
+        additionalData: `@import "@/styles/variables.css";`
       }
     }
-  }
-})
+  },
+  base: './',
+});
