@@ -29,6 +29,9 @@ import {
   HiOutlineShieldCheck,
   HiOutlineDocumentText
 } from 'react-icons/hi';
+import {
+  HiOutlineChartBar
+} from 'react-icons/hi';
 import { HiOutlineCog6Tooth } from 'react-icons/hi2';
 import './Footer.css';
 
@@ -49,7 +52,7 @@ const Footer = () => {
         {/* About Column */}
         <div className="footer-section brand-section">
           <div className="footer-logo">
-            <FontAwesomeIcon icon={faMusic} className="logo-icon" />
+            <HiOutlineChartBar icon={faMusic} className="logo-icon" />
             <h3>Dream Big Marketing®</h3>
           </div>
           <p className="brand-tagline">
