@@ -466,7 +466,7 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .about-hero-title {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   
   .about-hero-subtitle {

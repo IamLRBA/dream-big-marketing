@@ -34,7 +34,7 @@
   background-position: center calc(50% - 70px);
   padding: 40px;
   border-radius: 20px;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   border: 10px solid var(--secondary-color);
   position: relative;
@@ -826,4 +826,63 @@
   padding: 0 20px;
   position: relative;
   z-index: 1;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .home-page::before {
+    filter: blur(8px); /* Reduce blur intensity for mobile */
+    margin-bottom: 100px; /* Adjust blur margin */
+  }
+
+  .home-hero-section {
+    min-height: 80vh; /* Reduce min-height for mobile */
+    padding: 20px 15px; /* Add horizontal padding */
+  }
+
+  .home-hero-content {
+    background-size: 350px 350px; /* Scale down background image */
+    padding: 30px 20px; /* Adjust padding */
+    max-width: 95%; /* Use relative width */
+    border-width: 6px; /* Thinner border */
+  }
+
+  .home-culturez-pivot-image {
+    width: 100%; /* Full width container */
+    max-width: 350px; /* Limit max width */
+    height: auto; /* Flexible height */
+    margin-top: 30px; /* Adjust spacing */
+  }
+
+  .home-culturez-pivot-image img {
+    width: 100%; /* Responsive image */
+    height: auto;
+  }
+
+  .home-hero-title {
+    font-size: 2.8rem; /* Smaller font size */
+    margin-top: 0; /* Reset top margin */
+    line-height: 1.1; /* Tighter line height */
+  }
+
+  .home-hero-subtitle {
+    font-size: 1.1rem; /* Smaller subtitle */
+    padding: 0 10px; /* Add horizontal padding */
+  }
+
+  .home-hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px;
+    margin-top: 40px; /* Reduce top margin */
+    width: 100%; /* Full width container */
+    max-width: 300px; /* Limit max width */
+  }
+
+  .home-shop-btn,
+  .home-about-btn {
+    width: 100%; /* Full width buttons */
+    text-align: center;
+    padding: 12px; /* Consistent padding */
+    font-size: 1rem; /* Slightly smaller text */
+  }
 }

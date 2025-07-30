@@ -206,18 +206,60 @@
 
 @media (max-width: 768px) {
   .navbar-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: var(--white);
-    flex-direction: column;
-    align-items: center;
-    padding: var(--spacing-md) 0;
-    clip-path: circle(0px at 90% -10%);
-    transition: all 0.5s ease-out;
-    pointer-events: none;
-  }
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  margin-top: 2px;
+  background-color: var(--white);
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  clip-path: circle(0px at 90% -10%);
+  transition: all 0.5s ease-out;
+  pointer-events: none;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  
+  /* Modern scrollbar styling */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--secondary-color) var(--light-gray);
+}
+
+/* Modern scrollbar for Chrome, Edge, Safari */
+.navbar-links::-webkit-scrollbar {
+  width: 8px;
+}
+
+.navbar-links::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 4px;
+}
+
+.navbar-links::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+  border: 2px solid var(--light-gray);
+}
+
+.navbar-links::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Animation for smoother scrolling experience */
+@keyframes fadeInScrollbar {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.navbar-links::-webkit-scrollbar-thumb {
+  animation: fadeInScrollbar 0.3s ease-out;
+}
+
+/* Modern overscroll behavior */
+.navbar-links {
+  overscroll-behavior: contain; /* Prevent scroll chaining */
+}
 
   .navbar-links.active {
     clip-path: circle(1000px at 90% -10%);
@@ -227,7 +269,14 @@
   .navbar-link {
     width: 100%;
     text-align: center;
-    padding: var(--spacing-sm) 0;
+    margin-top: -2px;
+    margin-bottom: -30px;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--gray-100); 
+  }
+
+  .navbar-link:last-child {
+    border-bottom: none;
   }
 
   .navbar-toggle {
@@ -240,19 +289,19 @@
     right: 0;
     width: 100%;
     margin-right: 0;
-    padding: var(--spacing-sm);
+    padding: 0.8rem 1rem;
     background-color: var(--white);
     z-index: var(--z-index-modal);
   }
   
   .navbar-search-input {
-    width: 250px;
+    width: 100%;
     border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
     padding: var(--spacing-sm);
   }
   
   .navbar-search-input:focus {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -318,6 +367,15 @@
   margin-top: 2px;
   font-weight: 500;
 }
+
+/* Icon + Text container for menu items */
+  .navbar-link-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem; /* Reduced gap between icon and text */
+  }
 
 /* Mobile styles */
 @media (max-width: 768px) {
