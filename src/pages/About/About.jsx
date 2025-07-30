@@ -106,7 +106,7 @@ const About = () => {
         facebook: '#',
         twitter: '#',
         instagram: '#',
-        linkedin: '#'
+        linkedin: 'https://www.linkedin.com/nasra.harith/'
       }
     },
     {
@@ -119,7 +119,7 @@ const About = () => {
       social: {
         facebook: '#',
         twitter: '#',
-        instagram: '#',
+        instagram: 'https://www.instagram.com/iamlrba?igsh=MXcwcTF3b3R6ZG9yeQ%3D%3D&utm_source=qr',
         linkedin: '#'
       }
     }
