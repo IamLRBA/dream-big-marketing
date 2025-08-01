@@ -6,7 +6,7 @@
 
 # Project Description
 
-This DreamBIG Marketing Consultancy project is a professional website showcasing comprehensive marketing services that help businesses grow and achieve their goals. The platform serves as a digital hub for the consultancy, featuring service offerings, case studies, team information, and client resources.
+This DreamBIG Marketing Consultancy project is for a professional website showcasing comprehensive marketing services that help businesses grow and achieve their goals. The platform serves as a digital hub for the consultancy, featuring service offerings, case studies, team information, and client resources.
 
 Built as a modern single-page application using React, the website offers smooth navigation and responsive design to accommodate visitors across all device types. Key features include service showcases, client testimonials, team profiles, blog content, and contact forms.
 
